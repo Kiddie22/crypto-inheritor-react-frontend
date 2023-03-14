@@ -15,15 +15,15 @@
     "absolutePath": "project:/contracts/provable/libraries/BUFFER.sol",
     "exportedSymbols": {
       "Buffer": [
-        1590
+        1602
       ]
     },
-    "id": 1591,
+    "id": 1603,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1349,
+        "id": 1361,
         "literals": [
           "solidity",
           ">=",
@@ -43,9 +43,9 @@
         "contractDependencies": [],
         "contractKind": "library",
         "fullyImplemented": true,
-        "id": 1590,
+        "id": 1602,
         "linearizedBaseContracts": [
-          1590
+          1602
         ],
         "name": "Buffer",
         "nameLocation": "75:6:11",
@@ -53,16 +53,16 @@
         "nodes": [
           {
             "canonicalName": "Buffer.buffer",
-            "id": 1354,
+            "id": 1366,
             "members": [
               {
                 "constant": false,
-                "id": 1351,
+                "id": 1363,
                 "mutability": "mutable",
                 "name": "buf",
                 "nameLocation": "119:3:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 1354,
+                "scope": 1366,
                 "src": "113:9:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -71,7 +71,7 @@
                   "typeString": "bytes"
                 },
                 "typeName": {
-                  "id": 1350,
+                  "id": 1362,
                   "name": "bytes",
                   "nodeType": "ElementaryTypeName",
                   "src": "113:5:11",
@@ -84,12 +84,12 @@
               },
               {
                 "constant": false,
-                "id": 1353,
+                "id": 1365,
                 "mutability": "mutable",
                 "name": "capacity",
                 "nameLocation": "137:8:11",
                 "nodeType": "VariableDeclaration",
-                "scope": 1354,
+                "scope": 1366,
                 "src": "132:13:11",
                 "stateVariable": false,
                 "storageLocation": "default",
@@ -98,7 +98,7 @@
                   "typeString": "uint256"
                 },
                 "typeName": {
-                  "id": 1352,
+                  "id": 1364,
                   "name": "uint",
                   "nodeType": "ElementaryTypeName",
                   "src": "132:4:11",
@@ -113,29 +113,29 @@
             "name": "buffer",
             "nameLocation": "96:6:11",
             "nodeType": "StructDefinition",
-            "scope": 1590,
+            "scope": 1602,
             "src": "89:63:11",
             "visibility": "public"
           },
           {
             "body": {
-              "id": 1389,
+              "id": 1401,
               "nodeType": "Block",
               "src": "222:370:11",
               "statements": [
                 {
                   "assignments": [
-                    1363
+                    1375
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1363,
+                      "id": 1375,
                       "mutability": "mutable",
                       "name": "capacity",
                       "nameLocation": "237:8:11",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1389,
+                      "scope": 1401,
                       "src": "232:13:11",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -144,7 +144,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1362,
+                        "id": 1374,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "232:4:11",
@@ -156,13 +156,13 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1365,
+                  "id": 1377,
                   "initialValue": {
-                    "id": 1364,
+                    "id": 1376,
                     "name": "_capacity",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1359,
+                    "referencedDeclaration": 1371,
                     "src": "248:9:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
@@ -178,7 +178,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1370,
+                    "id": 1382,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -188,17 +188,17 @@
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 1368,
+                      "id": 1380,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 1366,
+                        "id": 1378,
                         "name": "capacity",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1363,
+                        "referencedDeclaration": 1375,
                         "src": "271:8:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -209,7 +209,7 @@
                       "operator": "%",
                       "rightExpression": {
                         "hexValue": "3332",
-                        "id": 1367,
+                        "id": 1379,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -233,7 +233,7 @@
                     "operator": "!=",
                     "rightExpression": {
                       "hexValue": "30",
-                      "id": 1369,
+                      "id": 1381,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -253,27 +253,27 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1381,
+                  "id": 1393,
                   "nodeType": "IfStatement",
                   "src": "267:81:11",
                   "trueBody": {
-                    "id": 1380,
+                    "id": 1392,
                     "nodeType": "Block",
                     "src": "291:57:11",
                     "statements": [
                       {
                         "expression": {
-                          "id": 1378,
+                          "id": 1390,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 1371,
+                            "id": 1383,
                             "name": "capacity",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1363,
+                            "referencedDeclaration": 1375,
                             "src": "305:8:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -287,14 +287,14 @@
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 1377,
+                            "id": 1389,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
                               "hexValue": "3332",
-                              "id": 1372,
+                              "id": 1384,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -317,17 +317,17 @@
                                     "typeIdentifier": "t_uint256",
                                     "typeString": "uint256"
                                   },
-                                  "id": 1375,
+                                  "id": 1387,
                                   "isConstant": false,
                                   "isLValue": false,
                                   "isPure": false,
                                   "lValueRequested": false,
                                   "leftExpression": {
-                                    "id": 1373,
+                                    "id": 1385,
                                     "name": "capacity",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 1363,
+                                    "referencedDeclaration": 1375,
                                     "src": "323:8:11",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
@@ -338,7 +338,7 @@
                                   "operator": "%",
                                   "rightExpression": {
                                     "hexValue": "3332",
-                                    "id": 1374,
+                                    "id": 1386,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": true,
@@ -359,7 +359,7 @@
                                   }
                                 }
                               ],
-                              "id": 1376,
+                              "id": 1388,
                               "isConstant": false,
                               "isInlineArray": false,
                               "isLValue": false,
@@ -384,7 +384,7 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 1379,
+                        "id": 1391,
                         "nodeType": "ExpressionStatement",
                         "src": "305:32:11"
                       }
@@ -393,25 +393,25 @@
                 },
                 {
                   "expression": {
-                    "id": 1386,
+                    "id": 1398,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftHandSide": {
                       "expression": {
-                        "id": 1382,
+                        "id": 1394,
                         "name": "_buf",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1357,
+                        "referencedDeclaration": 1369,
                         "src": "357:4:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                          "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                           "typeString": "struct Buffer.buffer memory"
                         }
                       },
-                      "id": 1384,
+                      "id": 1396,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -419,7 +419,7 @@
                       "memberLocation": "362:8:11",
                       "memberName": "capacity",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1353,
+                      "referencedDeclaration": 1365,
                       "src": "357:13:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -429,11 +429,11 @@
                     "nodeType": "Assignment",
                     "operator": "=",
                     "rightHandSide": {
-                      "id": 1385,
+                      "id": 1397,
                       "name": "capacity",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1363,
+                      "referencedDeclaration": 1375,
                       "src": "373:8:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -446,7 +446,7 @@
                       "typeString": "uint256"
                     }
                   },
-                  "id": 1387,
+                  "id": 1399,
                   "nodeType": "ExpressionStatement",
                   "src": "357:24:11"
                 },
@@ -585,27 +585,27 @@
                   "evmVersion": "london",
                   "externalReferences": [
                     {
-                      "declaration": 1357,
+                      "declaration": 1369,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "494:4:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1363,
+                      "declaration": 1375,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "566:8:11",
                       "valueSize": 1
                     }
                   ],
-                  "id": 1388,
+                  "id": 1400,
                   "nodeType": "InlineAssembly",
                   "src": "429:157:11"
                 }
               ]
             },
-            "id": 1390,
+            "id": 1402,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -613,41 +613,41 @@
             "nameLocation": "167:4:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1360,
+              "id": 1372,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1357,
+                  "id": 1369,
                   "mutability": "mutable",
                   "name": "_buf",
                   "nameLocation": "186:4:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1390,
+                  "scope": 1402,
                   "src": "172:18:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                    "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                     "typeString": "struct Buffer.buffer"
                   },
                   "typeName": {
-                    "id": 1356,
+                    "id": 1368,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1355,
+                      "id": 1367,
                       "name": "buffer",
                       "nameLocations": [
                         "172:6:11"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1354,
+                      "referencedDeclaration": 1366,
                       "src": "172:6:11"
                     },
-                    "referencedDeclaration": 1354,
+                    "referencedDeclaration": 1366,
                     "src": "172:6:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_buffer_$1354_storage_ptr",
+                      "typeIdentifier": "t_struct$_buffer_$1366_storage_ptr",
                       "typeString": "struct Buffer.buffer"
                     }
                   },
@@ -655,12 +655,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1359,
+                  "id": 1371,
                   "mutability": "mutable",
                   "name": "_capacity",
                   "nameLocation": "197:9:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1390,
+                  "scope": 1402,
                   "src": "192:14:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -669,7 +669,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1358,
+                    "id": 1370,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "192:4:11",
@@ -684,12 +684,12 @@
               "src": "171:36:11"
             },
             "returnParameters": {
-              "id": 1361,
+              "id": 1373,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "222:0:11"
             },
-            "scope": 1590,
+            "scope": 1602,
             "src": "158:434:11",
             "stateMutability": "pure",
             "virtual": false,
@@ -697,23 +697,23 @@
           },
           {
             "body": {
-              "id": 1413,
+              "id": 1425,
               "nodeType": "Block",
               "src": "663:108:11",
               "statements": [
                 {
                   "assignments": [
-                    1399
+                    1411
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1399,
+                      "id": 1411,
                       "mutability": "mutable",
                       "name": "oldbuf",
                       "nameLocation": "686:6:11",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1413,
+                      "scope": 1425,
                       "src": "673:19:11",
                       "stateVariable": false,
                       "storageLocation": "memory",
@@ -722,7 +722,7 @@
                         "typeString": "bytes"
                       },
                       "typeName": {
-                        "id": 1398,
+                        "id": 1410,
                         "name": "bytes",
                         "nodeType": "ElementaryTypeName",
                         "src": "673:5:11",
@@ -734,21 +734,21 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1402,
+                  "id": 1414,
                   "initialValue": {
                     "expression": {
-                      "id": 1400,
+                      "id": 1412,
                       "name": "_buf",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1393,
+                      "referencedDeclaration": 1405,
                       "src": "695:4:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                        "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                         "typeString": "struct Buffer.buffer memory"
                       }
                     },
-                    "id": 1401,
+                    "id": 1413,
                     "isConstant": false,
                     "isLValue": true,
                     "isPure": false,
@@ -756,7 +756,7 @@
                     "memberLocation": "700:3:11",
                     "memberName": "buf",
                     "nodeType": "MemberAccess",
-                    "referencedDeclaration": 1351,
+                    "referencedDeclaration": 1363,
                     "src": "695:8:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes_memory_ptr",
@@ -770,23 +770,23 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 1404,
+                        "id": 1416,
                         "name": "_buf",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1393,
+                        "referencedDeclaration": 1405,
                         "src": "718:4:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                          "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                           "typeString": "struct Buffer.buffer memory"
                         }
                       },
                       {
-                        "id": 1405,
+                        "id": 1417,
                         "name": "_capacity",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1395,
+                        "referencedDeclaration": 1407,
                         "src": "724:9:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -797,7 +797,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                          "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                           "typeString": "struct Buffer.buffer memory"
                         },
                         {
@@ -805,18 +805,18 @@
                           "typeString": "uint256"
                         }
                       ],
-                      "id": 1403,
+                      "id": 1415,
                       "name": "init",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1390,
+                      "referencedDeclaration": 1402,
                       "src": "713:4:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_struct$_buffer_$1354_memory_ptr_$_t_uint256_$returns$__$",
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_buffer_$1366_memory_ptr_$_t_uint256_$returns$__$",
                         "typeString": "function (struct Buffer.buffer memory,uint256) pure"
                       }
                     },
-                    "id": 1406,
+                    "id": 1418,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -832,7 +832,7 @@
                       "typeString": "tuple()"
                     }
                   },
-                  "id": 1407,
+                  "id": 1419,
                   "nodeType": "ExpressionStatement",
                   "src": "713:21:11"
                 },
@@ -840,23 +840,23 @@
                   "expression": {
                     "arguments": [
                       {
-                        "id": 1409,
+                        "id": 1421,
                         "name": "_buf",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1393,
+                        "referencedDeclaration": 1405,
                         "src": "751:4:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                          "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                           "typeString": "struct Buffer.buffer memory"
                         }
                       },
                       {
-                        "id": 1410,
+                        "id": 1422,
                         "name": "oldbuf",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1399,
+                        "referencedDeclaration": 1411,
                         "src": "757:6:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_bytes_memory_ptr",
@@ -867,7 +867,7 @@
                     "expression": {
                       "argumentTypes": [
                         {
-                          "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                          "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                           "typeString": "struct Buffer.buffer memory"
                         },
                         {
@@ -875,21 +875,21 @@
                           "typeString": "bytes memory"
                         }
                       ],
-                      "id": 1408,
+                      "id": 1420,
                       "name": "append",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [
-                        1513,
-                        1542
+                        1525,
+                        1554
                       ],
-                      "referencedDeclaration": 1513,
+                      "referencedDeclaration": 1525,
                       "src": "744:6:11",
                       "typeDescriptions": {
-                        "typeIdentifier": "t_function_internal_pure$_t_struct$_buffer_$1354_memory_ptr_$_t_bytes_memory_ptr_$returns$_t_struct$_buffer_$1354_memory_ptr_$",
+                        "typeIdentifier": "t_function_internal_pure$_t_struct$_buffer_$1366_memory_ptr_$_t_bytes_memory_ptr_$returns$_t_struct$_buffer_$1366_memory_ptr_$",
                         "typeString": "function (struct Buffer.buffer memory,bytes memory) pure returns (struct Buffer.buffer memory)"
                       }
                     },
-                    "id": 1411,
+                    "id": 1423,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -901,17 +901,17 @@
                     "src": "744:20:11",
                     "tryCall": false,
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                      "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                       "typeString": "struct Buffer.buffer memory"
                     }
                   },
-                  "id": 1412,
+                  "id": 1424,
                   "nodeType": "ExpressionStatement",
                   "src": "744:20:11"
                 }
               ]
             },
-            "id": 1414,
+            "id": 1426,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -919,41 +919,41 @@
             "nameLocation": "607:6:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1396,
+              "id": 1408,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1393,
+                  "id": 1405,
                   "mutability": "mutable",
                   "name": "_buf",
                   "nameLocation": "628:4:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1414,
+                  "scope": 1426,
                   "src": "614:18:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                    "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                     "typeString": "struct Buffer.buffer"
                   },
                   "typeName": {
-                    "id": 1392,
+                    "id": 1404,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1391,
+                      "id": 1403,
                       "name": "buffer",
                       "nameLocations": [
                         "614:6:11"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1354,
+                      "referencedDeclaration": 1366,
                       "src": "614:6:11"
                     },
-                    "referencedDeclaration": 1354,
+                    "referencedDeclaration": 1366,
                     "src": "614:6:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_buffer_$1354_storage_ptr",
+                      "typeIdentifier": "t_struct$_buffer_$1366_storage_ptr",
                       "typeString": "struct Buffer.buffer"
                     }
                   },
@@ -961,12 +961,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1395,
+                  "id": 1407,
                   "mutability": "mutable",
                   "name": "_capacity",
                   "nameLocation": "639:9:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1414,
+                  "scope": 1426,
                   "src": "634:14:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -975,7 +975,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1394,
+                    "id": 1406,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "634:4:11",
@@ -990,12 +990,12 @@
               "src": "613:36:11"
             },
             "returnParameters": {
-              "id": 1397,
+              "id": 1409,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "663:0:11"
             },
-            "scope": 1590,
+            "scope": 1602,
             "src": "598:173:11",
             "stateMutability": "pure",
             "virtual": false,
@@ -1003,7 +1003,7 @@
           },
           {
             "body": {
-              "id": 1432,
+              "id": 1444,
               "nodeType": "Block",
               "src": "841:82:11",
               "statements": [
@@ -1013,17 +1013,17 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1425,
+                    "id": 1437,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 1423,
+                      "id": 1435,
                       "name": "_a",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1416,
+                      "referencedDeclaration": 1428,
                       "src": "855:2:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1033,11 +1033,11 @@
                     "nodeType": "BinaryOperation",
                     "operator": ">",
                     "rightExpression": {
-                      "id": 1424,
+                      "id": 1436,
                       "name": "_b",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1418,
+                      "referencedDeclaration": 1430,
                       "src": "860:2:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1050,29 +1050,29 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1429,
+                  "id": 1441,
                   "nodeType": "IfStatement",
                   "src": "851:47:11",
                   "trueBody": {
-                    "id": 1428,
+                    "id": 1440,
                     "nodeType": "Block",
                     "src": "864:34:11",
                     "statements": [
                       {
                         "expression": {
-                          "id": 1426,
+                          "id": 1438,
                           "name": "_a",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1416,
+                          "referencedDeclaration": 1428,
                           "src": "885:2:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
-                        "functionReturnParameters": 1422,
-                        "id": 1427,
+                        "functionReturnParameters": 1434,
+                        "id": 1439,
                         "nodeType": "Return",
                         "src": "878:9:11"
                       }
@@ -1081,25 +1081,25 @@
                 },
                 {
                   "expression": {
-                    "id": 1430,
+                    "id": 1442,
                     "name": "_b",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1418,
+                    "referencedDeclaration": 1430,
                     "src": "914:2:11",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     }
                   },
-                  "functionReturnParameters": 1422,
-                  "id": 1431,
+                  "functionReturnParameters": 1434,
+                  "id": 1443,
                   "nodeType": "Return",
                   "src": "907:9:11"
                 }
               ]
             },
-            "id": 1433,
+            "id": 1445,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -1107,17 +1107,17 @@
             "nameLocation": "786:3:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1419,
+              "id": 1431,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1416,
+                  "id": 1428,
                   "mutability": "mutable",
                   "name": "_a",
                   "nameLocation": "795:2:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1433,
+                  "scope": 1445,
                   "src": "790:7:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1126,7 +1126,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1415,
+                    "id": 1427,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "790:4:11",
@@ -1139,12 +1139,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1418,
+                  "id": 1430,
                   "mutability": "mutable",
                   "name": "_b",
                   "nameLocation": "804:2:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1433,
+                  "scope": 1445,
                   "src": "799:7:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1153,7 +1153,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1417,
+                    "id": 1429,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "799:4:11",
@@ -1168,17 +1168,17 @@
               "src": "789:18:11"
             },
             "returnParameters": {
-              "id": 1422,
+              "id": 1434,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1421,
+                  "id": 1433,
                   "mutability": "mutable",
                   "name": "_max",
                   "nameLocation": "835:4:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1433,
+                  "scope": 1445,
                   "src": "830:9:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -1187,7 +1187,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1420,
+                    "id": 1432,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "830:4:11",
@@ -1201,7 +1201,7 @@
               ],
               "src": "829:11:11"
             },
-            "scope": 1590,
+            "scope": 1602,
             "src": "777:146:11",
             "stateMutability": "pure",
             "virtual": false,
@@ -1209,7 +1209,7 @@
           },
           {
             "body": {
-              "id": 1512,
+              "id": 1524,
               "nodeType": "Block",
               "src": "1320:1111:11",
               "statements": [
@@ -1219,7 +1219,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1453,
+                    "id": 1465,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1229,25 +1229,25 @@
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 1450,
+                      "id": 1462,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
                         "expression": {
-                          "id": 1445,
+                          "id": 1457,
                           "name": "_data",
                           "nodeType": "Identifier",
                           "overloadedDeclarations": [],
-                          "referencedDeclaration": 1439,
+                          "referencedDeclaration": 1451,
                           "src": "1334:5:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes_memory_ptr",
                             "typeString": "bytes memory"
                           }
                         },
-                        "id": 1446,
+                        "id": 1458,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1266,18 +1266,18 @@
                       "rightExpression": {
                         "expression": {
                           "expression": {
-                            "id": 1447,
+                            "id": 1459,
                             "name": "_buf",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1437,
+                            "referencedDeclaration": 1449,
                             "src": "1349:4:11",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                              "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                               "typeString": "struct Buffer.buffer memory"
                             }
                           },
-                          "id": 1448,
+                          "id": 1460,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
@@ -1285,14 +1285,14 @@
                           "memberLocation": "1354:3:11",
                           "memberName": "buf",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1351,
+                          "referencedDeclaration": 1363,
                           "src": "1349:8:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes_memory_ptr",
                             "typeString": "bytes memory"
                           }
                         },
-                        "id": 1449,
+                        "id": 1461,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -1316,18 +1316,18 @@
                     "operator": ">",
                     "rightExpression": {
                       "expression": {
-                        "id": 1451,
+                        "id": 1463,
                         "name": "_buf",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1437,
+                        "referencedDeclaration": 1449,
                         "src": "1367:4:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                          "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                           "typeString": "struct Buffer.buffer memory"
                         }
                       },
-                      "id": 1452,
+                      "id": 1464,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -1335,7 +1335,7 @@
                       "memberLocation": "1372:8:11",
                       "memberName": "capacity",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1353,
+                      "referencedDeclaration": 1365,
                       "src": "1367:13:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -1348,11 +1348,11 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1467,
+                  "id": 1479,
                   "nodeType": "IfStatement",
                   "src": "1330:127:11",
                   "trueBody": {
-                    "id": 1466,
+                    "id": 1478,
                     "nodeType": "Block",
                     "src": "1382:75:11",
                     "statements": [
@@ -1360,14 +1360,14 @@
                         "expression": {
                           "arguments": [
                             {
-                              "id": 1455,
+                              "id": 1467,
                               "name": "_buf",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1437,
+                              "referencedDeclaration": 1449,
                               "src": "1403:4:11",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                                "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                                 "typeString": "struct Buffer.buffer memory"
                               }
                             },
@@ -1376,7 +1376,7 @@
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 1463,
+                              "id": 1475,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -1385,18 +1385,18 @@
                                 "arguments": [
                                   {
                                     "expression": {
-                                      "id": 1457,
+                                      "id": 1469,
                                       "name": "_buf",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 1437,
+                                      "referencedDeclaration": 1449,
                                       "src": "1413:4:11",
                                       "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                                        "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                                         "typeString": "struct Buffer.buffer memory"
                                       }
                                     },
-                                    "id": 1458,
+                                    "id": 1470,
                                     "isConstant": false,
                                     "isLValue": true,
                                     "isPure": false,
@@ -1404,7 +1404,7 @@
                                     "memberLocation": "1418:8:11",
                                     "memberName": "capacity",
                                     "nodeType": "MemberAccess",
-                                    "referencedDeclaration": 1353,
+                                    "referencedDeclaration": 1365,
                                     "src": "1413:13:11",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
@@ -1413,18 +1413,18 @@
                                   },
                                   {
                                     "expression": {
-                                      "id": 1459,
+                                      "id": 1471,
                                       "name": "_data",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 1439,
+                                      "referencedDeclaration": 1451,
                                       "src": "1428:5:11",
                                       "typeDescriptions": {
                                         "typeIdentifier": "t_bytes_memory_ptr",
                                         "typeString": "bytes memory"
                                       }
                                     },
-                                    "id": 1460,
+                                    "id": 1472,
                                     "isConstant": false,
                                     "isLValue": false,
                                     "isPure": false,
@@ -1450,18 +1450,18 @@
                                       "typeString": "uint256"
                                     }
                                   ],
-                                  "id": 1456,
+                                  "id": 1468,
                                   "name": "max",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 1433,
+                                  "referencedDeclaration": 1445,
                                   "src": "1409:3:11",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 1461,
+                                "id": 1473,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -1481,7 +1481,7 @@
                               "operator": "*",
                               "rightExpression": {
                                 "hexValue": "32",
-                                "id": 1462,
+                                "id": 1474,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -1505,7 +1505,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                                "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                                 "typeString": "struct Buffer.buffer memory"
                               },
                               {
@@ -1513,18 +1513,18 @@
                                 "typeString": "uint256"
                               }
                             ],
-                            "id": 1454,
+                            "id": 1466,
                             "name": "resize",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1414,
+                            "referencedDeclaration": 1426,
                             "src": "1396:6:11",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_buffer_$1354_memory_ptr_$_t_uint256_$returns$__$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_buffer_$1366_memory_ptr_$_t_uint256_$returns$__$",
                               "typeString": "function (struct Buffer.buffer memory,uint256) pure"
                             }
                           },
-                          "id": 1464,
+                          "id": 1476,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -1540,7 +1540,7 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 1465,
+                        "id": 1477,
                         "nodeType": "ExpressionStatement",
                         "src": "1396:50:11"
                       }
@@ -1549,17 +1549,17 @@
                 },
                 {
                   "assignments": [
-                    1469
+                    1481
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1469,
+                      "id": 1481,
                       "mutability": "mutable",
                       "name": "dest",
                       "nameLocation": "1471:4:11",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1512,
+                      "scope": 1524,
                       "src": "1466:9:11",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1568,7 +1568,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1468,
+                        "id": 1480,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "1466:4:11",
@@ -1580,23 +1580,23 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1470,
+                  "id": 1482,
                   "nodeType": "VariableDeclarationStatement",
                   "src": "1466:9:11"
                 },
                 {
                   "assignments": [
-                    1472
+                    1484
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1472,
+                      "id": 1484,
                       "mutability": "mutable",
                       "name": "src",
                       "nameLocation": "1490:3:11",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1512,
+                      "scope": 1524,
                       "src": "1485:8:11",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1605,7 +1605,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1471,
+                        "id": 1483,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "1485:4:11",
@@ -1617,23 +1617,23 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1473,
+                  "id": 1485,
                   "nodeType": "VariableDeclarationStatement",
                   "src": "1485:8:11"
                 },
                 {
                   "assignments": [
-                    1475
+                    1487
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1475,
+                      "id": 1487,
                       "mutability": "mutable",
                       "name": "len",
                       "nameLocation": "1508:3:11",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1512,
+                      "scope": 1524,
                       "src": "1503:8:11",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -1642,7 +1642,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1474,
+                        "id": 1486,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "1503:4:11",
@@ -1654,21 +1654,21 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1478,
+                  "id": 1490,
                   "initialValue": {
                     "expression": {
-                      "id": 1476,
+                      "id": 1488,
                       "name": "_data",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1439,
+                      "referencedDeclaration": 1451,
                       "src": "1514:5:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_bytes_memory_ptr",
                         "typeString": "bytes memory"
                       }
                     },
-                    "id": 1477,
+                    "id": 1489,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1887,48 +1887,48 @@
                   "evmVersion": "london",
                   "externalReferences": [
                     {
-                      "declaration": 1437,
+                      "declaration": 1449,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "1579:4:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1439,
+                      "declaration": 1451,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "1864:5:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1439,
+                      "declaration": 1451,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "1920:5:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1469,
+                      "declaration": 1481,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "1708:4:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1472,
+                      "declaration": 1484,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "1909:3:11",
                       "valueSize": 1
                     }
                   ],
-                  "id": 1479,
+                  "id": 1491,
                   "nodeType": "InlineAssembly",
                   "src": "1536:404:11"
                 },
                 {
                   "body": {
-                    "id": 1496,
+                    "id": 1508,
                     "nodeType": "Block",
                     "src": "1977:178:11",
                     "statements": [
@@ -1978,37 +1978,37 @@
                         "evmVersion": "london",
                         "externalReferences": [
                           {
-                            "declaration": 1469,
+                            "declaration": 1481,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "2067:4:11",
                             "valueSize": 1
                           },
                           {
-                            "declaration": 1472,
+                            "declaration": 1484,
                             "isOffset": false,
                             "isSlot": false,
                             "src": "2079:3:11",
                             "valueSize": 1
                           }
                         ],
-                        "id": 1487,
+                        "id": 1499,
                         "nodeType": "InlineAssembly",
                         "src": "2033:65:11"
                       },
                       {
                         "expression": {
-                          "id": 1490,
+                          "id": 1502,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 1488,
+                            "id": 1500,
                             "name": "dest",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1469,
+                            "referencedDeclaration": 1481,
                             "src": "2111:4:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -2019,7 +2019,7 @@
                           "operator": "+=",
                           "rightHandSide": {
                             "hexValue": "3332",
-                            "id": 1489,
+                            "id": 1501,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2039,23 +2039,23 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 1491,
+                        "id": 1503,
                         "nodeType": "ExpressionStatement",
                         "src": "2111:10:11"
                       },
                       {
                         "expression": {
-                          "id": 1494,
+                          "id": 1506,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
                           "lValueRequested": false,
                           "leftHandSide": {
-                            "id": 1492,
+                            "id": 1504,
                             "name": "src",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1472,
+                            "referencedDeclaration": 1484,
                             "src": "2135:3:11",
                             "typeDescriptions": {
                               "typeIdentifier": "t_uint256",
@@ -2066,7 +2066,7 @@
                           "operator": "+=",
                           "rightHandSide": {
                             "hexValue": "3332",
-                            "id": 1493,
+                            "id": 1505,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
@@ -2086,7 +2086,7 @@
                             "typeString": "uint256"
                           }
                         },
-                        "id": 1495,
+                        "id": 1507,
                         "nodeType": "ExpressionStatement",
                         "src": "2135:9:11"
                       }
@@ -2097,17 +2097,17 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1482,
+                    "id": 1494,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
                     "lValueRequested": false,
                     "leftExpression": {
-                      "id": 1480,
+                      "id": 1492,
                       "name": "len",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
-                      "referencedDeclaration": 1475,
+                      "referencedDeclaration": 1487,
                       "src": "1955:3:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2118,7 +2118,7 @@
                     "operator": ">=",
                     "rightExpression": {
                       "hexValue": "3332",
-                      "id": 1481,
+                      "id": 1493,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2138,20 +2138,20 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1497,
+                  "id": 1509,
                   "loopExpression": {
                     "expression": {
-                      "id": 1485,
+                      "id": 1497,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftHandSide": {
-                        "id": 1483,
+                        "id": 1495,
                         "name": "len",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1475,
+                        "referencedDeclaration": 1487,
                         "src": "1966:3:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -2162,7 +2162,7 @@
                       "operator": "-=",
                       "rightHandSide": {
                         "hexValue": "3332",
-                        "id": 1484,
+                        "id": 1496,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -2182,7 +2182,7 @@
                         "typeString": "uint256"
                       }
                     },
-                    "id": 1486,
+                    "id": 1498,
                     "nodeType": "ExpressionStatement",
                     "src": "1966:9:11"
                   },
@@ -2191,17 +2191,17 @@
                 },
                 {
                   "assignments": [
-                    1499
+                    1511
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1499,
+                      "id": 1511,
                       "mutability": "mutable",
                       "name": "mask",
                       "nameLocation": "2169:4:11",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1512,
+                      "scope": 1524,
                       "src": "2164:9:11",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -2210,7 +2210,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1498,
+                        "id": 1510,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "2164:4:11",
@@ -2222,13 +2222,13 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1508,
+                  "id": 1520,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1507,
+                    "id": 1519,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2238,14 +2238,14 @@
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 1505,
+                      "id": 1517,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
                         "hexValue": "323536",
-                        "id": 1500,
+                        "id": 1512,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -2268,14 +2268,14 @@
                               "typeIdentifier": "t_uint256",
                               "typeString": "uint256"
                             },
-                            "id": 1503,
+                            "id": 1515,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": false,
                             "lValueRequested": false,
                             "leftExpression": {
                               "hexValue": "3332",
-                              "id": 1501,
+                              "id": 1513,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": true,
@@ -2292,11 +2292,11 @@
                             "nodeType": "BinaryOperation",
                             "operator": "-",
                             "rightExpression": {
-                              "id": 1502,
+                              "id": 1514,
                               "name": "len",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1475,
+                              "referencedDeclaration": 1487,
                               "src": "2189:3:11",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
@@ -2310,7 +2310,7 @@
                             }
                           }
                         ],
-                        "id": 1504,
+                        "id": 1516,
                         "isConstant": false,
                         "isInlineArray": false,
                         "isLValue": false,
@@ -2333,7 +2333,7 @@
                     "operator": "-",
                     "rightExpression": {
                       "hexValue": "31",
-                      "id": 1506,
+                      "id": 1518,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -2506,72 +2506,72 @@
                   "evmVersion": "london",
                   "externalReferences": [
                     {
-                      "declaration": 1469,
+                      "declaration": 1481,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "2334:4:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1469,
+                      "declaration": 1481,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "2366:4:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1499,
+                      "declaration": 1511,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "2289:4:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1499,
+                      "declaration": 1511,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "2341:4:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1472,
+                      "declaration": 1484,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "2279:3:11",
                       "valueSize": 1
                     }
                   ],
-                  "id": 1509,
+                  "id": 1521,
                   "nodeType": "InlineAssembly",
                   "src": "2231:173:11"
                 },
                 {
                   "expression": {
-                    "id": 1510,
+                    "id": 1522,
                     "name": "_buf",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1437,
+                    "referencedDeclaration": 1449,
                     "src": "2420:4:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                      "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                       "typeString": "struct Buffer.buffer memory"
                     }
                   },
-                  "functionReturnParameters": 1444,
-                  "id": 1511,
+                  "functionReturnParameters": 1456,
+                  "id": 1523,
                   "nodeType": "Return",
                   "src": "2413:11:11"
                 }
               ]
             },
             "documentation": {
-              "id": 1434,
+              "id": 1446,
               "nodeType": "StructuredDocumentation",
               "src": "928:285:11",
               "text": " @dev Appends a byte array to the end of the buffer. Resizes if doing so\n      would exceed the capacity of the buffer.\n @param _buf The buffer to append to.\n @param _data The data to append.\n @return _buffer The original buffer."
             },
-            "id": 1513,
+            "id": 1525,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -2579,41 +2579,41 @@
             "nameLocation": "1227:6:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1440,
+              "id": 1452,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1437,
+                  "id": 1449,
                   "mutability": "mutable",
                   "name": "_buf",
                   "nameLocation": "1248:4:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1513,
+                  "scope": 1525,
                   "src": "1234:18:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                    "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                     "typeString": "struct Buffer.buffer"
                   },
                   "typeName": {
-                    "id": 1436,
+                    "id": 1448,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1435,
+                      "id": 1447,
                       "name": "buffer",
                       "nameLocations": [
                         "1234:6:11"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1354,
+                      "referencedDeclaration": 1366,
                       "src": "1234:6:11"
                     },
-                    "referencedDeclaration": 1354,
+                    "referencedDeclaration": 1366,
                     "src": "1234:6:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_buffer_$1354_storage_ptr",
+                      "typeIdentifier": "t_struct$_buffer_$1366_storage_ptr",
                       "typeString": "struct Buffer.buffer"
                     }
                   },
@@ -2621,12 +2621,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1439,
+                  "id": 1451,
                   "mutability": "mutable",
                   "name": "_data",
                   "nameLocation": "1267:5:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1513,
+                  "scope": 1525,
                   "src": "1254:18:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
@@ -2635,7 +2635,7 @@
                     "typeString": "bytes"
                   },
                   "typeName": {
-                    "id": 1438,
+                    "id": 1450,
                     "name": "bytes",
                     "nodeType": "ElementaryTypeName",
                     "src": "1254:5:11",
@@ -2650,41 +2650,41 @@
               "src": "1233:40:11"
             },
             "returnParameters": {
-              "id": 1444,
+              "id": 1456,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1443,
+                  "id": 1455,
                   "mutability": "mutable",
                   "name": "_buffer",
                   "nameLocation": "1311:7:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1513,
+                  "scope": 1525,
                   "src": "1297:21:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                    "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                     "typeString": "struct Buffer.buffer"
                   },
                   "typeName": {
-                    "id": 1442,
+                    "id": 1454,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1441,
+                      "id": 1453,
                       "name": "buffer",
                       "nameLocations": [
                         "1297:6:11"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1354,
+                      "referencedDeclaration": 1366,
                       "src": "1297:6:11"
                     },
-                    "referencedDeclaration": 1354,
+                    "referencedDeclaration": 1366,
                     "src": "1297:6:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_buffer_$1354_storage_ptr",
+                      "typeIdentifier": "t_struct$_buffer_$1366_storage_ptr",
                       "typeString": "struct Buffer.buffer"
                     }
                   },
@@ -2693,7 +2693,7 @@
               ],
               "src": "1296:23:11"
             },
-            "scope": 1590,
+            "scope": 1602,
             "src": "1218:1213:11",
             "stateMutability": "pure",
             "virtual": false,
@@ -2701,7 +2701,7 @@
           },
           {
             "body": {
-              "id": 1541,
+              "id": 1553,
               "nodeType": "Block",
               "src": "2741:512:11",
               "statements": [
@@ -2711,7 +2711,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1529,
+                    "id": 1541,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -2721,7 +2721,7 @@
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 1526,
+                      "id": 1538,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
@@ -2729,18 +2729,18 @@
                       "leftExpression": {
                         "expression": {
                           "expression": {
-                            "id": 1522,
+                            "id": 1534,
                             "name": "_buf",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1517,
+                            "referencedDeclaration": 1529,
                             "src": "2755:4:11",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                              "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                               "typeString": "struct Buffer.buffer memory"
                             }
                           },
-                          "id": 1523,
+                          "id": 1535,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
@@ -2748,14 +2748,14 @@
                           "memberLocation": "2760:3:11",
                           "memberName": "buf",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1351,
+                          "referencedDeclaration": 1363,
                           "src": "2755:8:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes_memory_ptr",
                             "typeString": "bytes memory"
                           }
                         },
-                        "id": 1524,
+                        "id": 1536,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -2773,7 +2773,7 @@
                       "operator": "+",
                       "rightExpression": {
                         "hexValue": "31",
-                        "id": 1525,
+                        "id": 1537,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -2797,18 +2797,18 @@
                     "operator": ">",
                     "rightExpression": {
                       "expression": {
-                        "id": 1527,
+                        "id": 1539,
                         "name": "_buf",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1517,
+                        "referencedDeclaration": 1529,
                         "src": "2777:4:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                          "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                           "typeString": "struct Buffer.buffer memory"
                         }
                       },
-                      "id": 1528,
+                      "id": 1540,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -2816,7 +2816,7 @@
                       "memberLocation": "2782:8:11",
                       "memberName": "capacity",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1353,
+                      "referencedDeclaration": 1365,
                       "src": "2777:13:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -2829,11 +2829,11 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1539,
+                  "id": 1551,
                   "nodeType": "IfStatement",
                   "src": "2751:97:11",
                   "trueBody": {
-                    "id": 1538,
+                    "id": 1550,
                     "nodeType": "Block",
                     "src": "2792:56:11",
                     "statements": [
@@ -2841,14 +2841,14 @@
                         "expression": {
                           "arguments": [
                             {
-                              "id": 1531,
+                              "id": 1543,
                               "name": "_buf",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1517,
+                              "referencedDeclaration": 1529,
                               "src": "2813:4:11",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                                "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                                 "typeString": "struct Buffer.buffer memory"
                               }
                             },
@@ -2857,25 +2857,25 @@
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 1535,
+                              "id": 1547,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftExpression": {
                                 "expression": {
-                                  "id": 1532,
+                                  "id": 1544,
                                   "name": "_buf",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 1517,
+                                  "referencedDeclaration": 1529,
                                   "src": "2819:4:11",
                                   "typeDescriptions": {
-                                    "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                                    "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                                     "typeString": "struct Buffer.buffer memory"
                                   }
                                 },
-                                "id": 1533,
+                                "id": 1545,
                                 "isConstant": false,
                                 "isLValue": true,
                                 "isPure": false,
@@ -2883,7 +2883,7 @@
                                 "memberLocation": "2824:8:11",
                                 "memberName": "capacity",
                                 "nodeType": "MemberAccess",
-                                "referencedDeclaration": 1353,
+                                "referencedDeclaration": 1365,
                                 "src": "2819:13:11",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
@@ -2894,7 +2894,7 @@
                               "operator": "*",
                               "rightExpression": {
                                 "hexValue": "32",
-                                "id": 1534,
+                                "id": 1546,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -2918,7 +2918,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                                "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                                 "typeString": "struct Buffer.buffer memory"
                               },
                               {
@@ -2926,18 +2926,18 @@
                                 "typeString": "uint256"
                               }
                             ],
-                            "id": 1530,
+                            "id": 1542,
                             "name": "resize",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1414,
+                            "referencedDeclaration": 1426,
                             "src": "2806:6:11",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_buffer_$1354_memory_ptr_$_t_uint256_$returns$__$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_buffer_$1366_memory_ptr_$_t_uint256_$returns$__$",
                               "typeString": "function (struct Buffer.buffer memory,uint256) pure"
                             }
                           },
-                          "id": 1536,
+                          "id": 1548,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2953,7 +2953,7 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 1537,
+                        "id": 1549,
                         "nodeType": "ExpressionStatement",
                         "src": "2806:31:11"
                       }
@@ -3145,33 +3145,33 @@
                   "evmVersion": "london",
                   "externalReferences": [
                     {
-                      "declaration": 1517,
+                      "declaration": 1529,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "2900:4:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1519,
+                      "declaration": 1531,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "3164:5:11",
                       "valueSize": 1
                     }
                   ],
-                  "id": 1540,
+                  "id": 1552,
                   "nodeType": "InlineAssembly",
                   "src": "2857:390:11"
                 }
               ]
             },
             "documentation": {
-              "id": 1514,
+              "id": 1526,
               "nodeType": "StructuredDocumentation",
               "src": "2436:237:11",
               "text": " @dev Appends a byte to the end of the buffer. Resizes if doing so would\n exceed the capacity of the buffer.\n @param _buf The buffer to append to.\n @param _data The data to append."
             },
-            "id": 1542,
+            "id": 1554,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -3179,41 +3179,41 @@
             "nameLocation": "2687:6:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1520,
+              "id": 1532,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1517,
+                  "id": 1529,
                   "mutability": "mutable",
                   "name": "_buf",
                   "nameLocation": "2708:4:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1542,
+                  "scope": 1554,
                   "src": "2694:18:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                    "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                     "typeString": "struct Buffer.buffer"
                   },
                   "typeName": {
-                    "id": 1516,
+                    "id": 1528,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1515,
+                      "id": 1527,
                       "name": "buffer",
                       "nameLocations": [
                         "2694:6:11"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1354,
+                      "referencedDeclaration": 1366,
                       "src": "2694:6:11"
                     },
-                    "referencedDeclaration": 1354,
+                    "referencedDeclaration": 1366,
                     "src": "2694:6:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_buffer_$1354_storage_ptr",
+                      "typeIdentifier": "t_struct$_buffer_$1366_storage_ptr",
                       "typeString": "struct Buffer.buffer"
                     }
                   },
@@ -3221,12 +3221,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1519,
+                  "id": 1531,
                   "mutability": "mutable",
                   "name": "_data",
                   "nameLocation": "2720:5:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1542,
+                  "scope": 1554,
                   "src": "2714:11:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -3235,7 +3235,7 @@
                     "typeString": "uint8"
                   },
                   "typeName": {
-                    "id": 1518,
+                    "id": 1530,
                     "name": "uint8",
                     "nodeType": "ElementaryTypeName",
                     "src": "2714:5:11",
@@ -3250,12 +3250,12 @@
               "src": "2693:33:11"
             },
             "returnParameters": {
-              "id": 1521,
+              "id": 1533,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "2741:0:11"
             },
-            "scope": 1590,
+            "scope": 1602,
             "src": "2678:575:11",
             "stateMutability": "pure",
             "virtual": false,
@@ -3263,7 +3263,7 @@
           },
           {
             "body": {
-              "id": 1588,
+              "id": 1600,
               "nodeType": "Block",
               "src": "3653:627:11",
               "statements": [
@@ -3273,7 +3273,7 @@
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1563,
+                    "id": 1575,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3283,17 +3283,17 @@
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 1560,
+                      "id": 1572,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
-                        "id": 1556,
+                        "id": 1568,
                         "name": "_len",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1550,
+                        "referencedDeclaration": 1562,
                         "src": "3667:4:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -3305,18 +3305,18 @@
                       "rightExpression": {
                         "expression": {
                           "expression": {
-                            "id": 1557,
+                            "id": 1569,
                             "name": "_buf",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1546,
+                            "referencedDeclaration": 1558,
                             "src": "3674:4:11",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                              "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                               "typeString": "struct Buffer.buffer memory"
                             }
                           },
-                          "id": 1558,
+                          "id": 1570,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
@@ -3324,14 +3324,14 @@
                           "memberLocation": "3679:3:11",
                           "memberName": "buf",
                           "nodeType": "MemberAccess",
-                          "referencedDeclaration": 1351,
+                          "referencedDeclaration": 1363,
                           "src": "3674:8:11",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bytes_memory_ptr",
                             "typeString": "bytes memory"
                           }
                         },
-                        "id": 1559,
+                        "id": 1571,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": false,
@@ -3355,18 +3355,18 @@
                     "operator": ">",
                     "rightExpression": {
                       "expression": {
-                        "id": 1561,
+                        "id": 1573,
                         "name": "_buf",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1546,
+                        "referencedDeclaration": 1558,
                         "src": "3692:4:11",
                         "typeDescriptions": {
-                          "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                          "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                           "typeString": "struct Buffer.buffer memory"
                         }
                       },
-                      "id": 1562,
+                      "id": 1574,
                       "isConstant": false,
                       "isLValue": true,
                       "isPure": false,
@@ -3374,7 +3374,7 @@
                       "memberLocation": "3697:8:11",
                       "memberName": "capacity",
                       "nodeType": "MemberAccess",
-                      "referencedDeclaration": 1353,
+                      "referencedDeclaration": 1365,
                       "src": "3692:13:11",
                       "typeDescriptions": {
                         "typeIdentifier": "t_uint256",
@@ -3387,11 +3387,11 @@
                       "typeString": "bool"
                     }
                   },
-                  "id": 1576,
+                  "id": 1588,
                   "nodeType": "IfStatement",
                   "src": "3663:111:11",
                   "trueBody": {
-                    "id": 1575,
+                    "id": 1587,
                     "nodeType": "Block",
                     "src": "3707:67:11",
                     "statements": [
@@ -3399,14 +3399,14 @@
                         "expression": {
                           "arguments": [
                             {
-                              "id": 1565,
+                              "id": 1577,
                               "name": "_buf",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 1546,
+                              "referencedDeclaration": 1558,
                               "src": "3728:4:11",
                               "typeDescriptions": {
-                                "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                                "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                                 "typeString": "struct Buffer.buffer memory"
                               }
                             },
@@ -3415,7 +3415,7 @@
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 1572,
+                              "id": 1584,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
@@ -3424,18 +3424,18 @@
                                 "arguments": [
                                   {
                                     "expression": {
-                                      "id": 1567,
+                                      "id": 1579,
                                       "name": "_buf",
                                       "nodeType": "Identifier",
                                       "overloadedDeclarations": [],
-                                      "referencedDeclaration": 1546,
+                                      "referencedDeclaration": 1558,
                                       "src": "3738:4:11",
                                       "typeDescriptions": {
-                                        "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                                        "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                                         "typeString": "struct Buffer.buffer memory"
                                       }
                                     },
-                                    "id": 1568,
+                                    "id": 1580,
                                     "isConstant": false,
                                     "isLValue": true,
                                     "isPure": false,
@@ -3443,7 +3443,7 @@
                                     "memberLocation": "3743:8:11",
                                     "memberName": "capacity",
                                     "nodeType": "MemberAccess",
-                                    "referencedDeclaration": 1353,
+                                    "referencedDeclaration": 1365,
                                     "src": "3738:13:11",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
@@ -3451,11 +3451,11 @@
                                     }
                                   },
                                   {
-                                    "id": 1569,
+                                    "id": 1581,
                                     "name": "_len",
                                     "nodeType": "Identifier",
                                     "overloadedDeclarations": [],
-                                    "referencedDeclaration": 1550,
+                                    "referencedDeclaration": 1562,
                                     "src": "3753:4:11",
                                     "typeDescriptions": {
                                       "typeIdentifier": "t_uint256",
@@ -3474,18 +3474,18 @@
                                       "typeString": "uint256"
                                     }
                                   ],
-                                  "id": 1566,
+                                  "id": 1578,
                                   "name": "max",
                                   "nodeType": "Identifier",
                                   "overloadedDeclarations": [],
-                                  "referencedDeclaration": 1433,
+                                  "referencedDeclaration": 1445,
                                   "src": "3734:3:11",
                                   "typeDescriptions": {
                                     "typeIdentifier": "t_function_internal_pure$_t_uint256_$_t_uint256_$returns$_t_uint256_$",
                                     "typeString": "function (uint256,uint256) pure returns (uint256)"
                                   }
                                 },
-                                "id": 1570,
+                                "id": 1582,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": false,
@@ -3505,7 +3505,7 @@
                               "operator": "*",
                               "rightExpression": {
                                 "hexValue": "32",
-                                "id": 1571,
+                                "id": 1583,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
@@ -3529,7 +3529,7 @@
                           "expression": {
                             "argumentTypes": [
                               {
-                                "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                                "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                                 "typeString": "struct Buffer.buffer memory"
                               },
                               {
@@ -3537,18 +3537,18 @@
                                 "typeString": "uint256"
                               }
                             ],
-                            "id": 1564,
+                            "id": 1576,
                             "name": "resize",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 1414,
+                            "referencedDeclaration": 1426,
                             "src": "3721:6:11",
                             "typeDescriptions": {
-                              "typeIdentifier": "t_function_internal_pure$_t_struct$_buffer_$1354_memory_ptr_$_t_uint256_$returns$__$",
+                              "typeIdentifier": "t_function_internal_pure$_t_struct$_buffer_$1366_memory_ptr_$_t_uint256_$returns$__$",
                               "typeString": "function (struct Buffer.buffer memory,uint256) pure"
                             }
                           },
-                          "id": 1573,
+                          "id": 1585,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -3564,7 +3564,7 @@
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 1574,
+                        "id": 1586,
                         "nodeType": "ExpressionStatement",
                         "src": "3721:42:11"
                       }
@@ -3573,17 +3573,17 @@
                 },
                 {
                   "assignments": [
-                    1578
+                    1590
                   ],
                   "declarations": [
                     {
                       "constant": false,
-                      "id": 1578,
+                      "id": 1590,
                       "mutability": "mutable",
                       "name": "mask",
                       "nameLocation": "3788:4:11",
                       "nodeType": "VariableDeclaration",
-                      "scope": 1588,
+                      "scope": 1600,
                       "src": "3783:9:11",
                       "stateVariable": false,
                       "storageLocation": "default",
@@ -3592,7 +3592,7 @@
                         "typeString": "uint256"
                       },
                       "typeName": {
-                        "id": 1577,
+                        "id": 1589,
                         "name": "uint",
                         "nodeType": "ElementaryTypeName",
                         "src": "3783:4:11",
@@ -3604,13 +3604,13 @@
                       "visibility": "internal"
                     }
                   ],
-                  "id": 1584,
+                  "id": 1596,
                   "initialValue": {
                     "commonType": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
                     },
-                    "id": 1583,
+                    "id": 1595,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -3620,14 +3620,14 @@
                         "typeIdentifier": "t_uint256",
                         "typeString": "uint256"
                       },
-                      "id": 1581,
+                      "id": 1593,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": false,
                       "lValueRequested": false,
                       "leftExpression": {
                         "hexValue": "323536",
-                        "id": 1579,
+                        "id": 1591,
                         "isConstant": false,
                         "isLValue": false,
                         "isPure": true,
@@ -3644,11 +3644,11 @@
                       "nodeType": "BinaryOperation",
                       "operator": "**",
                       "rightExpression": {
-                        "id": 1580,
+                        "id": 1592,
                         "name": "_len",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 1550,
+                        "referencedDeclaration": 1562,
                         "src": "3802:4:11",
                         "typeDescriptions": {
                           "typeIdentifier": "t_uint256",
@@ -3665,7 +3665,7 @@
                     "operator": "-",
                     "rightExpression": {
                       "hexValue": "31",
-                      "id": 1582,
+                      "id": 1594,
                       "isConstant": false,
                       "isLValue": false,
                       "isPure": true,
@@ -3923,72 +3923,72 @@
                   "evmVersion": "london",
                   "externalReferences": [
                     {
-                      "declaration": 1546,
+                      "declaration": 1558,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "3863:4:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1548,
+                      "declaration": 1560,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "4166:5:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1550,
+                      "declaration": 1562,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "4029:4:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1550,
+                      "declaration": 1562,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "4213:4:11",
                       "valueSize": 1
                     },
                     {
-                      "declaration": 1578,
+                      "declaration": 1590,
                       "isOffset": false,
                       "isSlot": false,
                       "src": "4158:4:11",
                       "valueSize": 1
                     }
                   ],
-                  "id": 1585,
+                  "id": 1597,
                   "nodeType": "InlineAssembly",
                   "src": "3820:433:11"
                 },
                 {
                   "expression": {
-                    "id": 1586,
+                    "id": 1598,
                     "name": "_buf",
                     "nodeType": "Identifier",
                     "overloadedDeclarations": [],
-                    "referencedDeclaration": 1546,
+                    "referencedDeclaration": 1558,
                     "src": "4269:4:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                      "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                       "typeString": "struct Buffer.buffer memory"
                     }
                   },
-                  "functionReturnParameters": 1555,
-                  "id": 1587,
+                  "functionReturnParameters": 1567,
+                  "id": 1599,
                   "nodeType": "Return",
                   "src": "4262:11:11"
                 }
               ]
             },
             "documentation": {
-              "id": 1543,
+              "id": 1555,
               "nodeType": "StructuredDocumentation",
               "src": "3258:282:11",
               "text": " @dev Appends a byte to the end of the buffer. Resizes if doing so would\n exceed the capacity of the buffer.\n @param _buf The buffer to append to.\n @param _data The data to append.\n @return _buffer The original buffer."
             },
-            "id": 1589,
+            "id": 1601,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
@@ -3996,41 +3996,41 @@
             "nameLocation": "3554:9:11",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1551,
+              "id": 1563,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1546,
+                  "id": 1558,
                   "mutability": "mutable",
                   "name": "_buf",
                   "nameLocation": "3578:4:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1589,
+                  "scope": 1601,
                   "src": "3564:18:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                    "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                     "typeString": "struct Buffer.buffer"
                   },
                   "typeName": {
-                    "id": 1545,
+                    "id": 1557,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1544,
+                      "id": 1556,
                       "name": "buffer",
                       "nameLocations": [
                         "3564:6:11"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1354,
+                      "referencedDeclaration": 1366,
                       "src": "3564:6:11"
                     },
-                    "referencedDeclaration": 1354,
+                    "referencedDeclaration": 1366,
                     "src": "3564:6:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_buffer_$1354_storage_ptr",
+                      "typeIdentifier": "t_struct$_buffer_$1366_storage_ptr",
                       "typeString": "struct Buffer.buffer"
                     }
                   },
@@ -4038,12 +4038,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1548,
+                  "id": 1560,
                   "mutability": "mutable",
                   "name": "_data",
                   "nameLocation": "3589:5:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1589,
+                  "scope": 1601,
                   "src": "3584:10:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4052,7 +4052,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1547,
+                    "id": 1559,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "3584:4:11",
@@ -4065,12 +4065,12 @@
                 },
                 {
                   "constant": false,
-                  "id": 1550,
+                  "id": 1562,
                   "mutability": "mutable",
                   "name": "_len",
                   "nameLocation": "3601:4:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1589,
+                  "scope": 1601,
                   "src": "3596:9:11",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -4079,7 +4079,7 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1549,
+                    "id": 1561,
                     "name": "uint",
                     "nodeType": "ElementaryTypeName",
                     "src": "3596:4:11",
@@ -4094,41 +4094,41 @@
               "src": "3563:43:11"
             },
             "returnParameters": {
-              "id": 1555,
+              "id": 1567,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1554,
+                  "id": 1566,
                   "mutability": "mutable",
                   "name": "_buffer",
                   "nameLocation": "3644:7:11",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1589,
+                  "scope": 1601,
                   "src": "3630:21:11",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_buffer_$1354_memory_ptr",
+                    "typeIdentifier": "t_struct$_buffer_$1366_memory_ptr",
                     "typeString": "struct Buffer.buffer"
                   },
                   "typeName": {
-                    "id": 1553,
+                    "id": 1565,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1552,
+                      "id": 1564,
                       "name": "buffer",
                       "nameLocations": [
                         "3630:6:11"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 1354,
+                      "referencedDeclaration": 1366,
                       "src": "3630:6:11"
                     },
-                    "referencedDeclaration": 1354,
+                    "referencedDeclaration": 1366,
                     "src": "3630:6:11",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_buffer_$1354_storage_ptr",
+                      "typeIdentifier": "t_struct$_buffer_$1366_storage_ptr",
                       "typeString": "struct Buffer.buffer"
                     }
                   },
@@ -4137,14 +4137,14 @@
               ],
               "src": "3629:23:11"
             },
-            "scope": 1590,
+            "scope": 1602,
             "src": "3545:735:11",
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "internal"
           }
         ],
-        "scope": 1591,
+        "scope": 1603,
         "src": "67:4215:11",
         "usedErrors": []
       }
@@ -4157,7 +4157,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-03-14T07:11:37.802Z",
+  "updatedAt": "2023-03-14T10:30:48.012Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

@@ -29,15 +29,15 @@
     "absolutePath": "project:/contracts/provable/interfaces/provable-address-resolver-interface.sol",
     "exportedSymbols": {
       "OracleAddrResolverI": [
-        1232
+        1244
       ]
     },
-    "id": 1233,
+    "id": 1245,
     "license": "MIT",
     "nodeType": "SourceUnit",
     "nodes": [
       {
-        "id": 1226,
+        "id": 1238,
         "literals": [
           "solidity",
           ">=",
@@ -57,9 +57,9 @@
         "contractDependencies": [],
         "contractKind": "interface",
         "fullyImplemented": false,
-        "id": 1232,
+        "id": 1244,
         "linearizedBaseContracts": [
-          1232
+          1244
         ],
         "name": "OracleAddrResolverI",
         "nameLocation": "77:19:9",
@@ -67,7 +67,7 @@
         "nodes": [
           {
             "functionSelector": "38cc4831",
-            "id": 1231,
+            "id": 1243,
             "implemented": false,
             "kind": "function",
             "modifiers": [],
@@ -75,23 +75,23 @@
             "nameLocation": "112:10:9",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 1227,
+              "id": 1239,
               "nodeType": "ParameterList",
               "parameters": [],
               "src": "122:2:9"
             },
             "returnParameters": {
-              "id": 1230,
+              "id": 1242,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1229,
+                  "id": 1241,
                   "mutability": "mutable",
                   "name": "_address",
                   "nameLocation": "151:8:9",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1231,
+                  "scope": 1243,
                   "src": "143:16:9",
                   "stateVariable": false,
                   "storageLocation": "default",
@@ -100,7 +100,7 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 1228,
+                    "id": 1240,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
                     "src": "143:7:9",
@@ -115,14 +115,14 @@
               ],
               "src": "142:18:9"
             },
-            "scope": 1232,
+            "scope": 1244,
             "src": "103:58:9",
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           }
         ],
-        "scope": 1233,
+        "scope": 1245,
         "src": "67:96:9",
         "usedErrors": []
       }
@@ -135,7 +135,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-03-14T07:11:37.797Z",
+  "updatedAt": "2023-03-14T10:30:48.008Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

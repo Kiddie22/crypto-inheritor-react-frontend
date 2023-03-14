@@ -2,30 +2,34 @@ import { load } from '../funcs';
 import { useEffect, useState } from 'react';
 
 const FactoryInfo = () => {
+  const [refresh, setRefresh] = useState(true);
   const [ethBalance, setEthBalance] = useState(null);
   const [lockerFactoryAddress, setlockerFactoryAddress] = useState(null);
 
   useEffect(() => {
-    const getFactoryContractAddress = async () => {
-      const { cryptoInheritorContract, addressAccount } = await load();
-      cryptoInheritorContract.methods
-        .getFactoryContractAddress()
-        .call({ from: addressAccount })
-        .then((res) => {
-          setlockerFactoryAddress(res);
-        });
-    };
+    if (refresh === true) {
+      const getFactoryContractAddress = async () => {
+        const { cryptoInheritorContract, addressAccount } = await load();
+        cryptoInheritorContract.methods
+          .getFactoryContractAddress()
+          .call({ from: addressAccount })
+          .then((res) => {
+            setlockerFactoryAddress(res);
+          });
+      };
 
-    const fetchData = async () => {
-      if (lockerFactoryAddress) {
-        const ethBalance = await getEthBalance();
-        setEthBalance(ethBalance);
-      }
-    };
-
-    getFactoryContractAddress();
-    fetchData();
-  }, [lockerFactoryAddress]);
+      const fetchData = async () => {
+        if (lockerFactoryAddress) {
+          const ethBalance = await getEthBalance();
+          console.log({ ethBalance });
+          setEthBalance(ethBalance);
+          setRefresh(false);
+        }
+      };
+      getFactoryContractAddress();
+      fetchData();
+    }
+  }, [refresh, lockerFactoryAddress]);
 
   const getEthBalance = async () => {
     const { web3 } = await load();
@@ -40,11 +44,15 @@ const FactoryInfo = () => {
 
   const depositEth = async () => {
     const { web3, addressAccount } = await load();
-    await web3.eth.sendTransaction({
+    const res = await web3.eth.sendTransaction({
       from: addressAccount,
       to: lockerFactoryAddress,
       value: web3.utils.toWei('1', 'ether'),
     });
+    if (res.status === true) {
+      setRefresh(true);
+    }
+    console.log(res);
   };
 
   return (

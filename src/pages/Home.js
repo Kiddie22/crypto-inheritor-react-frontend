@@ -53,14 +53,14 @@ const Home = () => {
         addressAccount={addressAccount}
         cryptoInheritorContract={cryptoInheritorContract}
       />
-      {/* <FactoryInfo /> */}
-      {/* <WalletFunds
+      <FactoryInfo />
+      <WalletFunds
         web3={web3}
         addressAccount={addressAccount}
         lockerFactoryContract={lockerFactoryContract}
       />
       <UserStatus />
-      <ActivateProvable /> */}
+      <ActivateProvable />
       <NewLocker
         addressAccount={addressAccount}
         lockerFactoryContract={lockerFactoryContract}
@@ -75,7 +75,7 @@ const Home = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {lockers &&
+            {lockers[0] != '0' ? (
               lockers.map((locker) => {
                 return (
                   <ExistingLockers
@@ -85,7 +85,12 @@ const Home = () => {
                     key={locker}
                   />
                 );
-              })}
+              })
+            ) : (
+              <TableRow>
+                <TableCell>Nothing to dislay!</TableCell>
+              </TableRow>
+            )}
           </TableBody>
         </Table>
       </TableContainer>

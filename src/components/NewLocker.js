@@ -8,7 +8,7 @@ export default function NewLocker(props) {
   const createNewLocker = async (name, beneficiary) => {
     if (lockerFactoryContract) {
       await lockerFactoryContract.methods
-        .newLocker(name, beneficiary)
+        .createNewLocker(name, beneficiary)
         .send({ from: addressAccount })
         .then((e) => console.log(e));
       setName('');
