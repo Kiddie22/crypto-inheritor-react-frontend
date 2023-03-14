@@ -19,7 +19,7 @@ contract Locker {
 
     // Modifier to check that the caller is the owner of the contract
     modifier isOwner() {
-        require(msg.sender == owner, "Not Allowed!");
+        require(msg.sender == owner, "You're not the owner!");
         _;
     }
 

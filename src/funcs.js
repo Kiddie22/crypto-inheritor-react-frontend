@@ -6,8 +6,8 @@ const web3 = new Web3(Web3.givenProvider || 'ws://localhost:8545');
 
 export const load = async () => {
   const addressAccount = await loadAccount();
-  const lockerFactoryContract = await loadContract();
   const cryptoInheritorContract = await loadCryptoInheritorContract();
+  const lockerFactoryContract = await loadContract();
   const numberOfLockers = await fetchNumberOfLockers(
     addressAccount,
     lockerFactoryContract

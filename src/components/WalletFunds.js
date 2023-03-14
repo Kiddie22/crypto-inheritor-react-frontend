@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MemeToken from '../contracts/MemeToken.json';
 
 const ExistingLockers = (props) => {
-  const { web3, addressAccount } = props;
+  const { web3, addressAccount, lockerFactoryContract } = props;
   const [ethBalance, setEthBalance] = useState(0);
   const [balanceAddress, setBalanceAddress] = useState('');
   const [token, setToken] = useState({});

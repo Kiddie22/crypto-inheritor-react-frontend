@@ -11,7 +11,7 @@ contract LockerFactory is usingProvable {
 
     constructor() {
         contractOwner = msg.sender;
-        OAR = OracleAddrResolverI(0x1961a450025B5a5ab59B0Ace7a0766Fb511D82AA);
+        OAR = OracleAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);
     }
 
     event NewLocker(Locker locker, address owner);

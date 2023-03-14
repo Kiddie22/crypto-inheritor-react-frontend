@@ -14,12 +14,15 @@ import {
   TableRow,
   Paper,
 } from '@mui/material';
+import UserStatus from '../components/UserStatus';
+import ActivateProvable from '../components/ActivateProvable';
+import FactoryInfo from '../components/FactoryInfo';
 
 const Home = () => {
   const [web3, setWeb3] = useState(null);
   const [addressAccount, setAddressAccount] = useState(null);
   const [cryptoInheritorContract, setCryptoInheritorContract] = useState(null);
-  const [lockerFactoryContract, setlockerFactoryContract] = useState(null);
+  const [lockerFactoryContract, setLockerFactoryContract] = useState(null);
   const [lockers, setLockers] = useState([]);
   const [refresh, setRefresh] = useState(true);
 
@@ -36,12 +39,13 @@ const Home = () => {
       } = await load();
       setWeb3(web3);
       setAddressAccount(addressAccount);
-      setlockerFactoryContract(lockerFactoryContract);
+      setLockerFactoryContract(lockerFactoryContract);
       setCryptoInheritorContract(cryptoInheritorContract);
       setLockers(lockers);
+      console.log(lockers);
     };
     fetchData();
-  }, []);
+  });
 
   return (
     <Box>
@@ -49,11 +53,14 @@ const Home = () => {
         addressAccount={addressAccount}
         cryptoInheritorContract={cryptoInheritorContract}
       />
-      <WalletFunds
+      {/* <FactoryInfo /> */}
+      {/* <WalletFunds
         web3={web3}
         addressAccount={addressAccount}
         lockerFactoryContract={lockerFactoryContract}
       />
+      <UserStatus />
+      <ActivateProvable /> */}
       <NewLocker
         addressAccount={addressAccount}
         lockerFactoryContract={lockerFactoryContract}
@@ -68,16 +75,17 @@ const Home = () => {
             </TableRow>
           </TableHead>
           <TableBody>
-            {lockers.map((locker) => {
-              return (
-                <ExistingLockers
-                  web3={web3}
-                  addressAccount={addressAccount}
-                  lockerAddress={locker}
-                  key={locker}
-                />
-              );
-            })}
+            {lockers &&
+              lockers.map((locker) => {
+                return (
+                  <ExistingLockers
+                    web3={web3}
+                    addressAccount={addressAccount}
+                    lockerAddress={locker}
+                    key={locker}
+                  />
+                );
+              })}
           </TableBody>
         </Table>
       </TableContainer>
