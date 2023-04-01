@@ -1,23 +1,18 @@
 import { useEffect, useState } from 'react';
-import { load } from '../funcs';
 
-const ActivateProvable = () => {
+const ActivateProvable = (props) => {
+  const { addressAccount, lockerFactoryContract } = props.loadData;
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {
     const getCounter = async () => {
-      const { addressAccount, lockerFactoryContract } = await load();
-      console.log(lockerFactoryContract);
       const count = await lockerFactoryContract.methods.counter().call();
-      console.log({ count });
       setCounter(count);
     };
-    getCounter();
-  }, []);
+    lockerFactoryContract && getCounter();
+  }, [lockerFactoryContract]);
 
   const activateProvable = async () => {
-    const { addressAccount, lockerFactoryContract } = await load();
-    console.log(lockerFactoryContract.methods);
     const res = await lockerFactoryContract.methods
       .getUser()
       .send({ from: addressAccount });

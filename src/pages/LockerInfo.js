@@ -21,7 +21,6 @@ const LockerInfo = () => {
         Locker,
         lockerAddress
       );
-      console.log({ web3, lockerAddress, ethBalance, lockerContract });
     };
     fetchData();
   }, []);

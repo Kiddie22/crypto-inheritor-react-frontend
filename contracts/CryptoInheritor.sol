@@ -12,7 +12,7 @@ contract CryptoInheritor {
             address(userToFactoryAddress[msg.sender]) == address(0x0),
             "You have already created a LockerFactory contract"
         );
-        LockerFactory lockerFactory = new LockerFactory();
+        LockerFactory lockerFactory = new LockerFactory(msg.sender);
         lockerFactoryCount++;
         userToFactoryAddress[msg.sender] = lockerFactory;
         // payable(lockerFactory).transfer(msg.value);

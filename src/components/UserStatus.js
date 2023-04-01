@@ -1,18 +1,17 @@
 import { useEffect, useState } from 'react';
-import { load } from '../funcs';
 
-const UserStatus = () => {
+const UserStatus = (props) => {
+  const { lockerFactoryContract } = props.loadData;
   const [isAlive, setIsAlive] = useState(null);
 
   useEffect(() => {
-    getUserStatus();
-  }, []);
+    const getUserStatus = async () => {
+      const isAlive = await lockerFactoryContract.methods.isAlive().call();
+      setIsAlive(isAlive);
+    };
 
-  const getUserStatus = async () => {
-    const { lockerFactoryContract } = await load();
-    const isAlive = await lockerFactoryContract.methods.isAlive().call();
-    setIsAlive(isAlive);
-  };
+    lockerFactoryContract && getUserStatus();
+  }, [lockerFactoryContract]);
 
   return (
     <div>

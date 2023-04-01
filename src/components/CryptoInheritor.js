@@ -2,38 +2,36 @@ import React, { useEffect, useState } from 'react';
 import { Typography } from '@mui/material';
 
 export default function CryptoInheritor(props) {
-  const { addressAccount, cryptoInheritorContract } = props;
-  const [lockerFactoryAddress, setlockerFactoryAddress] = useState('');
+  const {
+    addressAccount,
+    cryptoInheritorContract,
+    lockerFactoryContractAddress,
+  } = props.loadData;
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
-    cryptoInheritorContract && getFactoryContractAddress();
-  }, [cryptoInheritorContract]);
-
-  const getFactoryContractAddress = async () => {
-    cryptoInheritorContract.methods
-      .getFactoryContractAddress()
-      .call({ from: addressAccount })
-      .then((res) => {
-        setlockerFactoryAddress(res);
-      });
-  };
+    setRefresh(false);
+  }, [refresh]);
 
   const createLockerFactory = async () => {
     cryptoInheritorContract.methods
       .newLockerFactory()
       .send({ from: addressAccount })
       .then((res) => {
-        console.log(res.events.NewLockerFactory);
+        console.log(res);
+        window.location.reload(false);
       })
       .catch((e) => console.log(e));
+    setRefresh(true);
   };
 
   return (
     <div style={{ padding: '10px' }}>
-      <Typography variant="h4" gutterBottom>
+      <Typography variant="h6" gutterBottom>
         Check CryptoLocker
       </Typography>
-      {lockerFactoryAddress === '0x0000000000000000000000000000000000000000' ? (
+      {lockerFactoryContractAddress ===
+      '0x0000000000000000000000000000000000000000' ? (
         <div>
           <button
             onClick={() => {
@@ -42,12 +40,11 @@ export default function CryptoInheritor(props) {
           >
             Create Account
           </button>
-          <p>{lockerFactoryAddress}</p>
         </div>
       ) : (
         <div>
           Account Details
-          <p>{lockerFactoryAddress}</p>
+          <p>{lockerFactoryContractAddress}</p>
         </div>
       )}
     </div>
