@@ -16,19 +16,11 @@ const Home = () => {
 
   useEffect(() => {
     if (!refresh) return;
-
     const fetchData = async () => {
       const res = await load();
       setLoadData(res);
-
-      res.cryptoInheritorContract.methods
-        .getFactoryContractAddress()
-        .call({ from: res.addressAccount })
-        .then((_res) => {
-          setLoadData({ ...res, lockerFactoryContractAddress: _res });
-        });
+      console.log(res);
     };
-
     fetchData();
     setRefresh(false);
   }, [refresh, loadData]);

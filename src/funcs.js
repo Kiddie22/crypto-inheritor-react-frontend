@@ -7,23 +7,41 @@ const web3 = new Web3(Web3.givenProvider || 'ws://localhost:8545');
 export const load = async () => {
   const addressAccount = await loadAccount();
   const cryptoInheritorContract = await loadCryptoInheritorContract();
-  const lockerFactoryContract = await loadLockerFactoryContract();
-  const numberOfLockers = await fetchNumberOfLockers(
+  const lockerFactoryContractAddress = await getLockerFactoryContractAddress(
     addressAccount,
-    lockerFactoryContract
+    cryptoInheritorContract
   );
-  const lockers = await fetchLockers(
-    addressAccount,
-    lockerFactoryContract,
-    numberOfLockers
-  );
+  if (
+    lockerFactoryContractAddress !==
+    '0x0000000000000000000000000000000000000000'
+  ) {
+    const lockerFactoryContract = await loadLockerFactoryContract(
+      lockerFactoryContractAddress
+    );
+    const numberOfLockers = await fetchNumberOfLockers(
+      addressAccount,
+      lockerFactoryContract
+    );
+    const lockers = await fetchLockers(
+      addressAccount,
+      lockerFactoryContract,
+      numberOfLockers
+    );
+    return {
+      web3,
+      addressAccount,
+      cryptoInheritorContract,
+      lockerFactoryContractAddress,
+      lockerFactoryContract,
+      numberOfLockers,
+      lockers,
+    };
+  }
   return {
     web3,
     addressAccount,
-    lockerFactoryContract,
     cryptoInheritorContract,
-    numberOfLockers,
-    lockers,
+    lockerFactoryContractAddress,
   };
 };
 
@@ -32,11 +50,24 @@ const loadAccount = async () => {
   return addressAccount;
 };
 
-const loadLockerFactoryContract = async () => {
-  var { abi } = LockerFactory;
-  const networkID = await web3.eth.net.getId();
-  const address = LockerFactory.networks[networkID].address;
-  const lockerFactoryContract = new web3.eth.Contract(abi, address);
+const getLockerFactoryContractAddress = async (
+  addressAccount,
+  cryptoInheritorContract
+) => {
+  const lockerFactoryContractAddress = await cryptoInheritorContract.methods
+    .getFactoryContractAddress()
+    .call({ from: addressAccount });
+  return lockerFactoryContractAddress;
+};
+
+export const loadLockerFactoryContract = async (
+  lockerFactoryContractAddress
+) => {
+  const { abi } = LockerFactory;
+  const lockerFactoryContract = new web3.eth.Contract(
+    abi,
+    lockerFactoryContractAddress
+  );
   return lockerFactoryContract;
 };
 
@@ -48,14 +79,17 @@ const loadCryptoInheritorContract = async () => {
   return cryptoInheritorContract;
 };
 
-const fetchNumberOfLockers = async (addressAccount, lockerFactoryContract) => {
+export const fetchNumberOfLockers = async (
+  addressAccount,
+  lockerFactoryContract
+) => {
   const number = await lockerFactoryContract.methods
     .getNumberOfLockers()
     .call({ from: addressAccount });
   return number;
 };
 
-const fetchLockers = async (
+export const fetchLockers = async (
   addressAccount,
   lockerFactoryContract,
   numberOfLockers
