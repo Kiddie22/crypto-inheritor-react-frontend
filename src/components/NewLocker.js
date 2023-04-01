@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 export default function NewLocker(props) {
-  const { addressAccount, lockerFactoryContract } = props;
+  const { addressAccount, lockerFactoryContract } = props.loadData;
   const [name, setName] = useState('');
   const [beneficiary, setBeneficiary] = useState('');
 

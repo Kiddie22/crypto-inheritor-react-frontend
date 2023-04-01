@@ -7,7 +7,7 @@ const web3 = new Web3(Web3.givenProvider || 'ws://localhost:8545');
 export const load = async () => {
   const addressAccount = await loadAccount();
   const cryptoInheritorContract = await loadCryptoInheritorContract();
-  const lockerFactoryContract = await loadContract();
+  const lockerFactoryContract = await loadLockerFactoryContract();
   const numberOfLockers = await fetchNumberOfLockers(
     addressAccount,
     lockerFactoryContract
@@ -32,7 +32,7 @@ const loadAccount = async () => {
   return addressAccount;
 };
 
-const loadContract = async () => {
+const loadLockerFactoryContract = async () => {
   var { abi } = LockerFactory;
   const networkID = await web3.eth.net.getId();
   const address = LockerFactory.networks[networkID].address;

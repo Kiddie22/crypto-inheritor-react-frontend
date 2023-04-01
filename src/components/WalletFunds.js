@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MemeToken from '../contracts/MemeToken.json';
 
 const ExistingLockers = (props) => {
-  const { web3, addressAccount, lockerFactoryContract } = props;
+  const { web3, addressAccount, lockerFactoryContractAddress } = props.loadData;
   const [ethBalance, setEthBalance] = useState(0);
   const [balanceAddress, setBalanceAddress] = useState('');
   const [token, setToken] = useState({});
@@ -24,8 +24,6 @@ const ExistingLockers = (props) => {
       const balance = await web3.eth.getBalance(addressAccount);
       const etherValue = web3.utils.fromWei(balance, 'ether');
       setEthBalance(etherValue);
-      console.log(etherValue);
-      console.log(addressAccount);
     }
   };
 

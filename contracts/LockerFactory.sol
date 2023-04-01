@@ -10,8 +10,8 @@ contract LockerFactory is usingProvable {
     address public contractOwner;
     mapping(uint256 => Locker) public lockers;
 
-    constructor() {
-        contractOwner = msg.sender;
+    constructor(address owner) {
+        contractOwner = owner;
         OAR = OracleAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);
     }
 
@@ -71,7 +71,7 @@ contract LockerFactory is usingProvable {
             provable_query(
                 60,
                 "URL",
-                "json(https://spotty-areas-eat-123-231-21-215.loca.lt/api/users/63d270f77eff774e5a1ba137).isAlive"
+                "json(https://crypto-inheritor-default-rtdb.asia-southeast1.firebasedatabase.app/api/user.json).isAlive"
             );
         }
     }
