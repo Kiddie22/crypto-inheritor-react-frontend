@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import MemeToken from '../contracts/MemeToken.json';
 
 const ExistingLockers = (props) => {
-  const { web3, addressAccount, lockerFactoryContractAddress } = props.loadData;
+  const { web3, addressAccount } = props.loadData;
   const [ethBalance, setEthBalance] = useState(0);
   const [balanceAddress, setBalanceAddress] = useState('');
   const [token, setToken] = useState({});
@@ -16,16 +16,16 @@ const ExistingLockers = (props) => {
   };
 
   useEffect(() => {
-    getEthBalance();
-  }, [addressAccount]);
+    const getEthBalance = async () => {
+      if (addressAccount) {
+        const balance = await web3.eth.getBalance(addressAccount);
+        const etherValue = web3.utils.fromWei(balance, 'ether');
+        setEthBalance(etherValue);
+      }
+    };
 
-  const getEthBalance = async () => {
-    if (addressAccount) {
-      const balance = await web3.eth.getBalance(addressAccount);
-      const etherValue = web3.utils.fromWei(balance, 'ether');
-      setEthBalance(etherValue);
-    }
-  };
+    getEthBalance();
+  }, [web3, addressAccount]);
 
   const getTokenAmount = async (tokenAddress) => {
     // create contract instance

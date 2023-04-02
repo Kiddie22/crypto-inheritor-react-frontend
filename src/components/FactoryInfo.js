@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const FactoryInfo = (props) => {
   const { web3, addressAccount, lockerFactoryContractAddress } = props.loadData;
   const [refresh, setRefresh] = useState(true);
   const [ethBalance, setEthBalance] = useState(null);
+  const amountRef = useRef(null);
 
   useEffect(() => {
     if (refresh === true) {
@@ -34,11 +35,13 @@ const FactoryInfo = (props) => {
     }
   }, [web3, refresh, lockerFactoryContractAddress]);
 
-  const depositEth = async () => {
+  const depositEth = async (e) => {
+    e.preventDefault();
+    const amount = amountRef.current.value;
     const res = await web3.eth.sendTransaction({
       from: addressAccount,
       to: lockerFactoryContractAddress,
-      value: web3.utils.toWei('1', 'ether'),
+      value: web3.utils.toWei(amount, 'ether'),
     });
     if (res.status === true) {
       setRefresh(true);
@@ -48,7 +51,11 @@ const FactoryInfo = (props) => {
   return (
     <>
       <h4>ETH balance: {ethBalance && ethBalance}</h4>
-      <button onClick={depositEth}>Add ETH to Factory contract</button>
+      <form onSubmit={depositEth}>
+        <label htmlFor="amount">Amount</label>
+        <input type="text" name="amount" id="amount" ref={amountRef} />
+        <button type="submit">Add ETH to Factory contract</button>
+      </form>
     </>
   );
 };

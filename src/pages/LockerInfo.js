@@ -1,5 +1,5 @@
 import { load } from '../funcs';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Locker from '../contracts/Locker.json';
 
@@ -8,6 +8,7 @@ const LockerInfo = () => {
   const [web3, setWeb3] = useState(null);
   const [addressAccount, setAddressAccount] = useState(null);
   const [ethBalance, setEthBalance] = useState(null);
+  const amountRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -16,14 +17,14 @@ const LockerInfo = () => {
       setAddressAccount(addressAccount);
       const ethBalance = await getEthBalance(web3, lockerAddress);
       setEthBalance(ethBalance);
-      const lockerContract = await loadLockerContract(
-        web3,
-        Locker,
-        lockerAddress
-      );
+      // const lockerContract = await loadLockerContract(
+      //   web3,
+      //   Locker,
+      //   lockerAddress
+      // );
     };
     fetchData();
-  }, []);
+  });
 
   const getEthBalance = async (web3, lockerAddress) => {
     const balance = await web3.eth.getBalance(lockerAddress);
@@ -44,11 +45,13 @@ const LockerInfo = () => {
     }
   };
 
-  const depositEth = async () => {
+  const depositEth = async (e) => {
+    e.preventDefault();
+    const amount = amountRef.current.value;
     await web3.eth.sendTransaction({
       from: addressAccount,
       to: lockerAddress,
-      value: web3.utils.toWei('1', 'ether'),
+      value: web3.utils.toWei(amount, 'ether'),
     });
   };
 
@@ -67,7 +70,11 @@ const LockerInfo = () => {
     <>
       <h4>{`Locker Info ${lockerAddress}`}</h4>
       <h4>ETH balance: {ethBalance && ethBalance}</h4>
-      <button onClick={depositEth}>Add ETH to Locker</button>
+      <form onSubmit={depositEth}>
+        <label htmlFor="amount">Amount</label>
+        <input type="text" name="amount" id="amount" ref={amountRef} />
+        <button type="submit">Add ETH to Locker</button>
+      </form>
       <button onClick={withdrawEth}>Withdraw ETH</button>
     </>
   );
