@@ -7,6 +7,7 @@ contract LockerFactory is usingProvable {
     uint256 public counter;
     uint256 numberOfLockers;
     bool public isAlive = true;
+    bool public oracleIsRunning = false;
     address public contractOwner;
     mapping(uint256 => Locker) public lockers;
 
@@ -53,6 +54,7 @@ contract LockerFactory is usingProvable {
             getUser();
         } else {
             isAlive = false;
+            oracleIsRunning = false;
             counter++;
             triggerFundTransfer();
         }
@@ -64,10 +66,14 @@ contract LockerFactory is usingProvable {
             emit LogNewProvableQuery(
                 "Provable query was NOT sent, please add some ETH to cover for the query fee"
             );
+            oracleIsRunning = false;
         } else {
             emit LogNewProvableQuery(
                 "Provable query was sent, standing by for the answer.."
             );
+            if (oracleIsRunning == true) {
+                oracleIsRunning = false;
+            }
             provable_query(
                 60,
                 "URL",

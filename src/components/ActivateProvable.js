@@ -22,6 +22,7 @@ const ActivateProvable = (props) => {
   return (
     <div>
       <button onClick={activateProvable}>ACTIVATE</button>
+      <h5>Provable is running</h5>
       <p>Counter: {counter}</p>
     </div>
   );
