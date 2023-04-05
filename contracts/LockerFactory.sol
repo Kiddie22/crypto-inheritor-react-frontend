@@ -76,8 +76,8 @@ contract LockerFactory is usingProvable {
             emit LogNewProvableQuery(
                 "Provable query was sent, standing by for the answer.."
             );
-            if (oracleIsRunning == true) {
-                oracleIsRunning = false;
+            if (oracleIsRunning == false) {
+                oracleIsRunning = true;
             }
             provable_query(
                 60,

@@ -31,6 +31,7 @@ export const load = async () => {
       addressAccount,
       lockerFactoryContract
     );
+    const oracleIsRunning = await getOracleIsRunning(lockerFactoryContract);
     return {
       web3,
       addressAccount,
@@ -40,6 +41,7 @@ export const load = async () => {
       numberOfLockers,
       lockers,
       nationalId,
+      oracleIsRunning,
     };
   }
   return {
@@ -84,17 +86,14 @@ const loadCryptoInheritorContract = async () => {
   return cryptoInheritorContract;
 };
 
-export const fetchNumberOfLockers = async (
-  addressAccount,
-  lockerFactoryContract
-) => {
+const fetchNumberOfLockers = async (addressAccount, lockerFactoryContract) => {
   const number = await lockerFactoryContract.methods
     .getNumberOfLockers()
     .call({ from: addressAccount });
   return number;
 };
 
-export const fetchLockers = async (
+const fetchLockers = async (
   addressAccount,
   lockerFactoryContract,
   numberOfLockers
@@ -109,12 +108,16 @@ export const fetchLockers = async (
   return lockerArray;
 };
 
-export const fetchNationalId = async (
-  addressAccount,
-  lockerFactoryContract
-) => {
+const fetchNationalId = async (addressAccount, lockerFactoryContract) => {
   const nationalId = await lockerFactoryContract.methods
     .nationalId()
     .call({ from: addressAccount });
   return nationalId;
+};
+
+const getOracleIsRunning = async (lockerFactoryContract) => {
+  const isRunning = await lockerFactoryContract.methods
+    .oracleIsRunning()
+    .call();
+  return isRunning;
 };

@@ -20,6 +20,7 @@ const Header = () => {
               Crypto Inheritor
             </Link>
           </Typography>
+
           <Link
             to="/wallet"
             style={{
