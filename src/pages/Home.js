@@ -1,5 +1,4 @@
-import { load } from '../funcs';
-import { Box, Container } from '@mui/material';
+import { Container, Grid } from '@mui/material';
 import NewLocker from '../components/NewLocker';
 import React from 'react';
 import UserDetails from '../components/UserDetails';
@@ -10,11 +9,19 @@ import ActivateProvable from '../components/ActivateProvable';
 const Home = () => {
   return (
     <Container>
+      {/* <Grid
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+      > */}
       <UserDetails />
       <LockerFactoryContract />
       <ActivateProvable />
       <NewLocker />
       <LockerTable />
+      {/* </Grid> */}
     </Container>
   );
 };

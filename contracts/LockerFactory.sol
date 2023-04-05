@@ -6,14 +6,17 @@ import "./provable/provableAPI.sol";
 contract LockerFactory is usingProvable {
     uint256 public counter;
     uint256 numberOfLockers;
-    bool public isAlive = true;
-    bool public oracleIsRunning = false;
-    address public contractOwner;
-    string public nationalId = "";
+    bool isAlive;
+    bool oracleIsRunning;
+    address contractOwner;
+    string nationalId;
     mapping(uint256 => Locker) public lockers;
 
     constructor(address owner) {
         contractOwner = owner;
+        isAlive = true;
+        oracleIsRunning = false;
+        nationalId = "undefined";
         OAR = OracleAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);
     }
 
@@ -41,6 +44,18 @@ contract LockerFactory is usingProvable {
 
     function setNationalId(string memory _nationalId) public {
         nationalId = _nationalId;
+    }
+
+    function getNationalId() public view returns (string memory) {
+        return nationalId;
+    }
+
+    function getIsAlive() public view returns (bool) {
+        return isAlive;
+    }
+
+    function getOracleIsRunning() public view returns (bool) {
+        return oracleIsRunning;
     }
 
     // ------------------------ Automated Function ------------------------

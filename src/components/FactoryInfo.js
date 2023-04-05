@@ -60,6 +60,7 @@ const FactoryInfo = () => {
             label="Amount"
             variant="outlined"
             inputRef={amountRef}
+            required
           />
           <Button type="submit" variant="contained">
             Add ETH

@@ -3,11 +3,14 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Avatar } from '@mui/material';
+import { Avatar, Chip } from '@mui/material';
 import { Link } from 'react-router-dom';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import useWeb3Data from '../../hooks/useWeb3Data';
 
 const Header = () => {
+  const { oracleIsRunning } = useWeb3Data();
+
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
@@ -20,6 +23,12 @@ const Header = () => {
               Crypto Inheritor
             </Link>
           </Typography>
+
+          {oracleIsRunning ? (
+            <Chip label="Oracle Active" color="success" />
+          ) : (
+            <Chip label="Oracle Disabled" color="error" />
+          )}
 
           <Link
             to="/wallet"

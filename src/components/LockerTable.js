@@ -11,7 +11,7 @@ import ExistingLockers from './ExistingLockers';
 import useWeb3Data from '../hooks/useWeb3Data';
 
 const LockerTable = () => {
-  const { web3, lockers, addressAccount } = useWeb3Data();
+  const { lockers } = useWeb3Data();
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -25,14 +25,7 @@ const LockerTable = () => {
         <TableBody>
           {lockers && lockers[0] !== '0' ? (
             lockers.map((locker) => {
-              return (
-                <ExistingLockers
-                  web3={web3}
-                  addressAccount={addressAccount}
-                  lockerAddress={locker}
-                  key={locker}
-                />
-              );
+              return <ExistingLockers lockerAddress={locker} key={locker} />;
             })
           ) : (
             <TableRow>

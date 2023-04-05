@@ -37,12 +37,14 @@ export default function NewLocker() {
             variant="outlined"
             size="small"
             inputRef={lockerNameRef}
+            required
           />
           <TextField
             label="Beneficiary Address"
             variant="outlined"
             size="small"
             inputRef={benefAddressRef}
+            required
           />
           <br />
           <Button type="submit" variant="contained" size="small">

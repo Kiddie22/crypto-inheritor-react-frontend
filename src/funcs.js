@@ -31,7 +31,10 @@ export const load = async () => {
       addressAccount,
       lockerFactoryContract
     );
-    const oracleIsRunning = await getOracleIsRunning(lockerFactoryContract);
+    const oracleIsRunning = await getOracleIsRunning(
+      addressAccount,
+      lockerFactoryContract
+    );
     return {
       web3,
       addressAccount,
@@ -110,14 +113,14 @@ const fetchLockers = async (
 
 const fetchNationalId = async (addressAccount, lockerFactoryContract) => {
   const nationalId = await lockerFactoryContract.methods
-    .nationalId()
+    .getNationalId()
     .call({ from: addressAccount });
   return nationalId;
 };
 
-const getOracleIsRunning = async (lockerFactoryContract) => {
+const getOracleIsRunning = async (addressAccount, lockerFactoryContract) => {
   const isRunning = await lockerFactoryContract.methods
-    .oracleIsRunning()
-    .call();
+    .getOracleIsRunning()
+    .call({ from: addressAccount });
   return isRunning;
 };

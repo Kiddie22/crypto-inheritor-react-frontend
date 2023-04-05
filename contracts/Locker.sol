@@ -4,14 +4,10 @@ import "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
 
 contract Locker {
     string public name;
-    address public owner;
-    address public beneficiary;
+    address owner;
+    address beneficiary;
 
-    constructor(
-        string memory _name,
-        address _owner,
-        address _beneficiary
-    ) {
+    constructor(string memory _name, address _owner, address _beneficiary) {
         name = _name;
         owner = _owner;
         beneficiary = _beneficiary;
@@ -28,10 +24,10 @@ contract Locker {
     event Received(uint256 amount);
 
     // ------------------------ Owner Functions ------------------------
-    function withdrawERC20(address _tokenAddress, uint256 _amount)
-        external
-        isOwner
-    {
+    function withdrawERC20(
+        address _tokenAddress,
+        uint256 _amount
+    ) external isOwner {
         IERC20Metadata token = IERC20Metadata(_tokenAddress);
         uint256 balance = token.balanceOf(address(this));
         require(balance >= _amount, "Not Enought Balance !");
@@ -43,6 +39,14 @@ contract Locker {
         require(address(this).balance >= _amount, "Not Enought Balance !");
         payable(msg.sender).transfer(_amount);
         emit Withdrew(msg.sender, _amount);
+    }
+
+    function getOwnerAddress() public view isOwner returns (address) {
+        return owner;
+    }
+
+    function getBeneficiaryAddress() public view isOwner returns (address) {
+        return beneficiary;
     }
 
     // ------------------------ Beneficiary Automated Function ------------------------

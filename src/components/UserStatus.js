@@ -2,17 +2,19 @@ import { useEffect, useState } from 'react';
 import useWeb3Data from '../hooks/useWeb3Data';
 
 const UserStatus = () => {
-  const { lockerFactoryContract } = useWeb3Data;
+  const { addressAccount, lockerFactoryContract } = useWeb3Data;
   const [isAlive, setIsAlive] = useState(null);
 
   useEffect(() => {
     const getUserStatus = async () => {
-      const isAlive = await lockerFactoryContract.methods.isAlive().call();
+      const isAlive = await lockerFactoryContract.methods
+        .getIsAlive()
+        .call({ from: addressAccount });
       setIsAlive(isAlive);
     };
 
     lockerFactoryContract && getUserStatus();
-  }, [lockerFactoryContract]);
+  }, [addressAccount, lockerFactoryContract]);
 
   return (
     <div>

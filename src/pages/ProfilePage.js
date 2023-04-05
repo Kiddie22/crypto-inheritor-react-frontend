@@ -1,8 +1,11 @@
+import { Avatar, Button, Grid, TextField } from '@mui/material';
 import UserStatus from '../components/UserStatus';
 import useWeb3Data from '../hooks/useWeb3Data';
+import { useRef } from 'react';
 
 const ProfilePage = () => {
   const { lockerFactoryContract, addressAccount, nationalId } = useWeb3Data();
+  const nationalIdRef = useRef();
 
   const setNationalId = async () => {
     const result = await lockerFactoryContract.methods
@@ -12,12 +15,34 @@ const ProfilePage = () => {
   };
 
   return (
-    <div>
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+    >
       <h1>Profile</h1>
+      <Avatar sx={{ width: 56, height: 56 }} />
       <UserStatus />
-      <p>national id : {nationalId}</p>
-      <button onClick={setNationalId}>test</button>
-    </div>
+      {nationalId === 'undefined' ? (
+        <>
+          <TextField label="National ID" inputRef={nationalIdRef} />
+          <Button onClick={setNationalId} variant="contained">
+            Set ID
+          </Button>
+        </>
+      ) : (
+        <TextField
+          label="National ID"
+          defaultValue={nationalId}
+          InputProps={{
+            readOnly: true,
+          }}
+          disabled
+        />
+      )}
+    </Grid>
   );
 };
 
