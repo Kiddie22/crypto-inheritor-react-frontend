@@ -1,4 +1,4 @@
-import { Box, CircularProgress, Container } from '@mui/material';
+import { CircularProgress, Container, Grid } from '@mui/material';
 import NewLocker from '../components/NewLocker';
 import React, { useEffect, useState } from 'react';
 import LockerTable from '../components/LockerTable';
@@ -18,9 +18,16 @@ const Home = () => {
 
   if (isLoading) {
     return (
-      <Box sx={{ display: 'flex' }}>
+      <Grid
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        style={{ minHeight: '100vh' }}
+      >
         <CircularProgress />
-      </Box>
+      </Grid>
     );
   }
 

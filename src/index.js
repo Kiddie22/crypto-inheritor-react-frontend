@@ -4,7 +4,7 @@ import './index.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import LockerInfo from './pages/LockerInfo';
-import Header from './components/Layout/Header';
+import Layout from './components/Layout/Layout';
 import { Web3Provider } from './context/Web3Provider';
 import ProfilePage from './pages/ProfilePage';
 import WalletPage from './pages/WalletPage';
@@ -14,13 +14,14 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <BrowserRouter>
     <Web3Provider>
-      <Header />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/profile" element={<ProfilePage />} />
-        <Route path="/wallet" element={<WalletPage />} />
-        <Route path="locker/:lockerAddress" element={<LockerInfo />} />
+        <Route element={<Layout />}>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/wallet" element={<WalletPage />} />
+          <Route path="locker/:lockerAddress" element={<LockerInfo />} />
+        </Route>
       </Routes>
     </Web3Provider>
   </BrowserRouter>
