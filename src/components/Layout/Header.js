@@ -5,6 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import { Avatar } from '@mui/material';
 import { Link } from 'react-router-dom';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 
 const Header = () => {
   return (
@@ -16,10 +17,21 @@ const Header = () => {
               to="/"
               style={{ textDecoration: 'inherit', color: 'inherit' }}
             >
-              Home
+              Crypto Inheritor
             </Link>
           </Typography>
-          <Link to="/profile" style={{ textDecoration: 'inherit', color: 'inherit' }}>
+          <Link
+            to="/wallet"
+            style={{
+              textDecoration: 'inherit',
+              color: 'inherit',
+              padding: '10px',
+            }}
+          >
+            <AccountBalanceWalletIcon />
+          </Link>
+
+          <Link to="/profile">
             <Avatar />
           </Link>
         </Toolbar>

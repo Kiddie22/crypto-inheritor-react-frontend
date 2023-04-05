@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import useWeb3Data from '../hooks/useWeb3Data';
+import { Box, Button, Stack, TextField } from '@mui/material';
 
 const FactoryInfo = () => {
   const { web3, addressAccount, lockerFactoryContractAddress } = useWeb3Data();
@@ -50,14 +51,22 @@ const FactoryInfo = () => {
   };
 
   return (
-    <>
+    <Box>
       <h4>ETH balance: {ethBalance && ethBalance}</h4>
       <form onSubmit={depositEth}>
-        <label htmlFor="amount">Amount</label>
-        <input type="text" name="amount" id="amount" ref={amountRef} />
-        <button type="submit">Add ETH to Factory contract</button>
+        <Stack direction="row" spacing={1} paddingBottom={3}>
+          <TextField
+            id="Amount"
+            label="Amount"
+            variant="outlined"
+            inputRef={amountRef}
+          />
+          <Button type="submit" variant="contained">
+            Add ETH
+          </Button>
+        </Stack>
       </form>
-    </>
+    </Box>
   );
 };
 

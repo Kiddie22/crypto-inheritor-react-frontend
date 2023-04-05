@@ -1,18 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { Typography } from '@mui/material';
+import React from 'react';
+import { Box, Button, Typography } from '@mui/material';
 import useWeb3Data from '../hooks/useWeb3Data';
+import FactoryInfo from './FactoryInfo';
 
-export default function CryptoInheritor() {
+export default function LockerFactoryContract() {
   const {
     addressAccount,
     cryptoInheritorContract,
     lockerFactoryContractAddress,
   } = useWeb3Data();
-  const [refresh, setRefresh] = useState(false);
-
-  useEffect(() => {
-    setRefresh(false);
-  }, [refresh]);
 
   const createLockerFactory = async () => {
     cryptoInheritorContract.methods
@@ -20,34 +16,35 @@ export default function CryptoInheritor() {
       .send({ from: addressAccount })
       .then((res) => {
         console.log(res);
-        window.location.reload(false);
       })
       .catch((e) => console.log(e));
-    setRefresh(true);
   };
 
   return (
-    <div style={{ padding: '10px' }}>
+    <Box>
       <Typography variant="h6" gutterBottom>
-        Check CryptoLocker
+        LockerFactory Contract
       </Typography>
       {lockerFactoryContractAddress ===
       '0x0000000000000000000000000000000000000000' ? (
         <div>
-          <button
+          <p>No Locker factory contract exists for this wallet</p>
+          <Button
             onClick={() => {
               createLockerFactory();
             }}
+            variant="contained"
           >
-            Create Account
-          </button>
+            Create Contract
+          </Button>
         </div>
       ) : (
         <div>
-          Account Details
+          Contract Address
           <p>{lockerFactoryContractAddress}</p>
+          <FactoryInfo />
         </div>
       )}
-    </div>
+    </Box>
   );
 }

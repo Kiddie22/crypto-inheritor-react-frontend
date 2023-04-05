@@ -9,6 +9,7 @@ contract LockerFactory is usingProvable {
     bool public isAlive = true;
     bool public oracleIsRunning = false;
     address public contractOwner;
+    string public nationalId = "";
     mapping(uint256 => Locker) public lockers;
 
     constructor(address owner) {
@@ -36,6 +37,10 @@ contract LockerFactory is usingProvable {
         numberOfLockers++;
         // emit new locker event
         emit NewLocker(locker, msg.sender);
+    }
+
+    function setNationalId(string memory _nationalId) public {
+        nationalId = _nationalId;
     }
 
     // ------------------------ Automated Function ------------------------

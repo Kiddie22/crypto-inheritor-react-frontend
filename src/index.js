@@ -6,6 +6,8 @@ import Home from './pages/Home';
 import LockerInfo from './pages/LockerInfo';
 import Header from './components/Layout/Header';
 import { Web3Provider } from './context/Web3Provider';
+import ProfilePage from './pages/ProfilePage';
+import WalletPage from './pages/WalletPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,6 +16,8 @@ root.render(
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/wallet" element={<WalletPage />} />
         <Route path="locker/:lockerAddress" element={<LockerInfo />} />
       </Routes>
     </BrowserRouter>

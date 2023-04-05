@@ -27,6 +27,10 @@ export const load = async () => {
       lockerFactoryContract,
       numberOfLockers
     );
+    const nationalId = await fetchNationalId(
+      addressAccount,
+      lockerFactoryContract
+    );
     return {
       web3,
       addressAccount,
@@ -35,6 +39,7 @@ export const load = async () => {
       lockerFactoryContract,
       numberOfLockers,
       lockers,
+      nationalId,
     };
   }
   return {
@@ -102,4 +107,14 @@ export const fetchLockers = async (
     lockerArray[i] = locker;
   }
   return lockerArray;
+};
+
+export const fetchNationalId = async (
+  addressAccount,
+  lockerFactoryContract
+) => {
+  const nationalId = await lockerFactoryContract.methods
+    .nationalId()
+    .call({ from: addressAccount });
+  return nationalId;
 };
