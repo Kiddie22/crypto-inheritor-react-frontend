@@ -9,32 +9,32 @@ import UserDetails from '../components/UserDetails';
 import LockerTable from '../components/LockerTable';
 import CryptoInheritor from '../components/CryptoInheritor';
 import ActivateProvable from '../components/ActivateProvable';
+import useWeb3Api from '../hooks/useWeb3Api';
 
 const Home = () => {
-  const [loadData, setLoadData] = useState({});
+  const setWeb3Context = useWeb3Api();
   const [refresh, setRefresh] = useState(true);
 
   useEffect(() => {
     if (!refresh) return;
     const fetchData = async () => {
       const res = await load();
-      setLoadData(res);
-      console.log(res);
+      setWeb3Context(res);
     };
     fetchData();
     setRefresh(false);
-  }, [refresh, loadData]);
+  }, [refresh, setWeb3Context]);
 
   return (
     <Box>
-      <UserDetails loadData={loadData} />
-      <CryptoInheritor loadData={loadData} />
-      <FactoryInfo loadData={loadData} />
-      <WalletFunds loadData={loadData} />
-      <UserStatus loadData={loadData} />
-      <ActivateProvable loadData={loadData} />
-      <NewLocker loadData={loadData} />
-      <LockerTable loadData={loadData} />
+      <UserDetails />
+      <CryptoInheritor />
+      <FactoryInfo />
+      <WalletFunds />
+      <UserStatus />
+      <ActivateProvable />
+      <NewLocker />
+      <LockerTable />
     </Box>
   );
 };

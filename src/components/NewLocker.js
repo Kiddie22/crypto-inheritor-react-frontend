@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import useWeb3Data from '../hooks/useWeb3Data';
 
-export default function NewLocker(props) {
-  const { addressAccount, lockerFactoryContract } = props.loadData;
+export default function NewLocker() {
+  const { addressAccount, lockerFactoryContract } = useWeb3Data();
   const [name, setName] = useState('');
   const [beneficiary, setBeneficiary] = useState('');
 

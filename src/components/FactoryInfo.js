@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
+import useWeb3Data from '../hooks/useWeb3Data';
 
-const FactoryInfo = (props) => {
-  const { web3, addressAccount, lockerFactoryContractAddress } = props.loadData;
+const FactoryInfo = () => {
+  const { web3, addressAccount, lockerFactoryContractAddress } = useWeb3Data();
   const [refresh, setRefresh] = useState(true);
   const [ethBalance, setEthBalance] = useState(null);
   const amountRef = useRef(null);

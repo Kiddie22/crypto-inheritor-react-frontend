@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+import useWeb3Data from '../hooks/useWeb3Data';
 
-const ActivateProvable = (props) => {
-  const { addressAccount, lockerFactoryContract } = props.loadData;
+const ActivateProvable = () => {
+  const { addressAccount, lockerFactoryContract } = useWeb3Data();
   const [counter, setCounter] = useState(0);
 
   useEffect(() => {

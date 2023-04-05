@@ -8,9 +8,10 @@ import {
   TableRow,
 } from '@mui/material';
 import ExistingLockers from './ExistingLockers';
+import useWeb3Data from '../hooks/useWeb3Data';
 
-const LockerTable = (props) => {
-  const { web3, lockers, addressAccount } = props.loadData;
+const LockerTable = () => {
+  const { web3, lockers, addressAccount } = useWeb3Data();
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">

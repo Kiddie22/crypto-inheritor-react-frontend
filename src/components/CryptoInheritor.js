@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { Typography } from '@mui/material';
+import useWeb3Data from '../hooks/useWeb3Data';
 
-export default function CryptoInheritor(props) {
+export default function CryptoInheritor() {
   const {
     addressAccount,
     cryptoInheritorContract,
     lockerFactoryContractAddress,
-  } = props.loadData;
+  } = useWeb3Data();
   const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {

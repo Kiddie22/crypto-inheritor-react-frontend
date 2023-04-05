@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import MemeToken from '../contracts/MemeToken.json';
+import useWeb3Data from '../hooks/useWeb3Data';
 
-const ExistingLockers = (props) => {
-  const { web3, addressAccount } = props.loadData;
+const ExistingLockers = () => {
+  const { web3, addressAccount } = useWeb3Data();
   const [ethBalance, setEthBalance] = useState(0);
   const [balanceAddress, setBalanceAddress] = useState('');
   const [token, setToken] = useState({});

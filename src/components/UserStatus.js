@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
+import useWeb3Data from '../hooks/useWeb3Data';
 
-const UserStatus = (props) => {
-  const { lockerFactoryContract } = props.loadData;
+const UserStatus = () => {
+  const { lockerFactoryContract } = useWeb3Data;
   const [isAlive, setIsAlive] = useState(null);
 
   useEffect(() => {
