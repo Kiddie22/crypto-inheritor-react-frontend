@@ -7,6 +7,7 @@ import { Avatar, Chip } from '@mui/material';
 import { Link } from 'react-router-dom';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import useWeb3Data from '../../hooks/useWeb3Data';
+import ConnectedWalletChip from '../ConnectedWalletChip';
 
 const Header = () => {
   const { oracleIsRunning } = useWeb3Data();
@@ -29,6 +30,8 @@ const Header = () => {
           ) : (
             <Chip label="Oracle Disabled" color="error" />
           )}
+
+          <ConnectedWalletChip />
 
           <Link
             to="/wallet"

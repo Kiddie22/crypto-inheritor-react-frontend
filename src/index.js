@@ -8,18 +8,20 @@ import Header from './components/Layout/Header';
 import { Web3Provider } from './context/Web3Provider';
 import ProfilePage from './pages/ProfilePage';
 import WalletPage from './pages/WalletPage';
+import Login from './pages/Login';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Web3Provider>
-    <BrowserRouter>
+  <BrowserRouter>
+    <Web3Provider>
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/profile" element={<ProfilePage />} />
         <Route path="/wallet" element={<WalletPage />} />
         <Route path="locker/:lockerAddress" element={<LockerInfo />} />
       </Routes>
-    </BrowserRouter>
-  </Web3Provider>
+    </Web3Provider>
+  </BrowserRouter>
 );
