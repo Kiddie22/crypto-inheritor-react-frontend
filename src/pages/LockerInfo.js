@@ -1,27 +1,19 @@
-import { load } from '../funcs';
 import { useEffect, useRef, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import Locker from '../contracts/Locker.json';
+import useWeb3Data from '../hooks/useWeb3Data';
+import { Button, Grid, Stack, TextField, Typography } from '@mui/material';
 
 const LockerInfo = () => {
   const { lockerAddress } = useParams();
-  const [web3, setWeb3] = useState(null);
-  const [addressAccount, setAddressAccount] = useState(null);
+  const { web3, addressAccount } = useWeb3Data();
   const [ethBalance, setEthBalance] = useState(null);
   const amountRef = useRef(null);
 
   useEffect(() => {
     const fetchData = async () => {
-      const { web3, addressAccount } = await load();
-      setWeb3(web3);
-      setAddressAccount(addressAccount);
       const ethBalance = await getEthBalance(web3, lockerAddress);
       setEthBalance(ethBalance);
-      // const lockerContract = await loadLockerContract(
-      //   web3,
-      //   Locker,
-      //   lockerAddress
-      // );
     };
     fetchData();
   });
@@ -67,16 +59,34 @@ const LockerInfo = () => {
   };
 
   return (
-    <>
-      <h4>{`Locker Info ${lockerAddress}`}</h4>
+    <Grid
+      container
+      spacing={0}
+      direction="column"
+      alignItems="center"
+      justifyContent="center"
+      style={{ minHeight: '80vh' }}
+    >
+      <Typography variant="h3">Locker</Typography>
+      <Typography variant="h6">{lockerAddress}</Typography>
       <h4>ETH balance: {ethBalance && ethBalance}</h4>
       <form onSubmit={depositEth}>
-        <label htmlFor="amount">Amount</label>
-        <input type="text" name="amount" id="amount" ref={amountRef} />
-        <button type="submit">Add ETH to Locker</button>
+        <Stack direction="row" spacing={1} paddingBottom={3}>
+          <TextField placeholder="Amount" ref={amountRef} size="small" />
+          <Button type="submit" variant="contained" size="small">
+            Add ETH to Locker
+          </Button>
+        </Stack>
       </form>
-      <button onClick={withdrawEth}>Withdraw ETH</button>
-    </>
+      <Button
+        type="submit"
+        variant="contained"
+        size="small"
+        onClick={withdrawEth}
+      >
+        Withdraw ETH
+      </Button>
+    </Grid>
   );
 };
 

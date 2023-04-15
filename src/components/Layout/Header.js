@@ -24,6 +24,14 @@ const Header = () => {
               Crypto Inheritor
             </Link>
           </Typography>
+          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+            <Link
+              to="/lockers"
+              style={{ textDecoration: 'inherit', color: 'inherit' }}
+            >
+              Lockers
+            </Link>
+          </Typography>
 
           {oracleIsRunning ? (
             <Chip label="Oracle Active" color="success" />

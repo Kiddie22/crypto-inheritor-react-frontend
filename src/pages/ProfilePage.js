@@ -25,9 +25,10 @@ const ProfilePage = () => {
       <h1>Profile</h1>
       <Avatar sx={{ width: 56, height: 56 }} />
       <UserStatus />
-      {nationalId === 'undefined' ? (
+      {nationalId === 'undefined' || !nationalId ? (
         <>
           <TextField label="National ID" inputRef={nationalIdRef} />
+          <br />
           <Button onClick={setNationalId} variant="contained">
             Set ID
           </Button>

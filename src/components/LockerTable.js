@@ -13,7 +13,7 @@ import useWeb3Data from '../hooks/useWeb3Data';
 const LockerTable = () => {
   const { lockers } = useWeb3Data();
   return (
-    <TableContainer component={Paper}>
+    <TableContainer component={Paper} style={{ maxWidth: '50vw' }}>
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>

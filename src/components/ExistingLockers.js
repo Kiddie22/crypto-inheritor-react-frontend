@@ -35,7 +35,7 @@ export default function ExistingLockers(props) {
         });
     };
 
-    const loadLockers = async () => {
+    const loadLockerDetails = async () => {
       const lockerContract = await loadLockerContract();
       if (lockerContract) {
         getLockerName(lockerContract);
@@ -43,7 +43,7 @@ export default function ExistingLockers(props) {
       }
     };
 
-    loadLockers();
+    loadLockerDetails();
   }, [web3, lockerAddress, addressAccount]);
 
   return (
