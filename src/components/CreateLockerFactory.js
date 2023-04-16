@@ -24,6 +24,13 @@ export default function CreateLockerFactory() {
       await cryptoInheritorContract.methods
         .newLockerFactory(username, nationalId)
         .send({ from: addressAccount });
+      await fetch('https://crypto-inheritor-backend.herokuapp.com/api/users', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ username, nationalId }),
+      });
       setIsDisabled(false);
       setInfoOpen(false);
       setSuccessOpen(true);

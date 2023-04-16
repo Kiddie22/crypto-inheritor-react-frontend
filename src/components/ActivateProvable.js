@@ -4,8 +4,6 @@ import { Button } from '@mui/material';
 
 const ActivateProvable = () => {
   const { addressAccount, lockerFactoryContract } = useWeb3Data();
-  // const [counter, setCounter] = useState(0);
-  console.log({ lockerFactoryContract });
 
   useEffect(() => {
     const fetchCounter = async () => {

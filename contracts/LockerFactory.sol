@@ -100,11 +100,12 @@ contract LockerFactory is usingProvable {
             if (oracleIsRunning == false) {
                 oracleIsRunning = true;
             }
-            provable_query(
-                60,
-                "URL",
-                "json(https://crypto-inheritor-default-rtdb.asia-southeast1.firebasedatabase.app/api/user.json).isAlive"
+            string memory path = string.concat(
+                "json(https://crypto-inheritor-backend.herokuapp.com/api/users/",
+                nationalId
             );
+            path = string.concat(path, ").isAlive");
+            provable_query(60, "URL", path);
         }
     }
 

@@ -22,7 +22,6 @@ contract CryptoInheritor {
         );
         lockerFactoryCount++;
         userToFactoryAddress[msg.sender] = lockerFactory;
-        // payable(lockerFactory).transfer(msg.value);
         emit NewLockerFactory(lockerFactory, msg.sender);
     }
 
