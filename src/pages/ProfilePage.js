@@ -3,7 +3,7 @@ import UserStatus from '../components/UserStatus';
 import useWeb3Data from '../hooks/useWeb3Data';
 
 const ProfilePage = () => {
-  const { nationalId } = useWeb3Data();
+  const { username, nationalId } = useWeb3Data();
 
   return (
     <Grid
@@ -18,12 +18,19 @@ const ProfilePage = () => {
       <UserStatus />
 
       <TextField
+        label="Username"
+        defaultValue={username}
+        InputProps={{
+          readOnly: true,
+        }}
+      />
+      <br />
+      <TextField
         label="National ID"
         defaultValue={nationalId}
         InputProps={{
           readOnly: true,
         }}
-        disabled
       />
     </Grid>
   );

@@ -2,7 +2,7 @@ import LockerFactory from './contracts/LockerFactory.json';
 import CryptoInheritor from './contracts/CryptoInheritor.json';
 import Web3 from 'web3';
 
-const web3 = new Web3(Web3.givenProvider || 'ws://localhost:8545');
+const web3 = new Web3(Web3.givenProvider || 'ws://localhost:7545');
 
 export const load = async () => {
   const addressAccount = await loadAccount();
@@ -27,6 +27,7 @@ export const load = async () => {
       lockerFactoryContract,
       numberOfLockers
     );
+    const username = await fetchUsername(addressAccount, lockerFactoryContract);
     const nationalId = await fetchNationalId(
       addressAccount,
       lockerFactoryContract
@@ -43,6 +44,7 @@ export const load = async () => {
       lockerFactoryContract,
       numberOfLockers,
       lockers,
+      username,
       nationalId,
       oracleIsRunning,
     };
@@ -109,6 +111,13 @@ const fetchLockers = async (
     lockerArray[i] = locker;
   }
   return lockerArray;
+};
+
+const fetchUsername = async (addressAccount, lockerFactoryContract) => {
+  const username = await lockerFactoryContract.methods
+    .getUsername()
+    .call({ from: addressAccount });
+  return username;
 };
 
 const fetchNationalId = async (addressAccount, lockerFactoryContract) => {

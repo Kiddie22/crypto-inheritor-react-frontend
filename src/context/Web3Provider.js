@@ -32,18 +32,18 @@ export function Web3Provider(props) {
         const newToken = { symbol: 'ETH', balance: etherValue };
         tokens = [...tokens, newToken];
 
-        const token = new web3.eth.Contract(
-          MemeToken.abi,
-          '0x6f14C02Fc1F78322cFd7d707aB90f18baD3B54f5'
-        );
-        const [symbol, decimals] = await Promise.all([
-          token.methods.symbol().call({ from: addressAccount }),
-          token.methods.decimals().call({ from: addressAccount }),
-        ]);
+        // const token = new web3.eth.Contract(
+        //   MemeToken.abi,
+        //   '0x6f14C02Fc1F78322cFd7d707aB90f18baD3B54f5'
+        // );
+        // const [symbol, decimals] = await Promise.all([
+        //   token.methods.symbol().call({ from: addressAccount }),
+        //   token.methods.decimals().call({ from: addressAccount }),
+        // ]);
 
-        let usdtBalance = await token.methods.balanceOf(addressAccount).call();
-        usdtBalance = String(usdtBalance / Math.pow(10, decimals));
-        tokens = [...tokens, { symbol, balance: usdtBalance }];
+        // let usdtBalance = await token.methods.balanceOf(addressAccount).call();
+        // usdtBalance = String(usdtBalance / Math.pow(10, decimals));
+        // tokens = [...tokens, { symbol, balance: usdtBalance }];
 
         res.tokens = tokens;
         res.loadingComplete = true;
