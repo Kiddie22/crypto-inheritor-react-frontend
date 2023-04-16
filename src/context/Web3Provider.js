@@ -13,6 +13,7 @@ export function Web3Provider(props) {
   const navigate = useNavigate();
 
   window.ethereum.on('accountsChanged', async () => {
+    setWeb3Context((prevValue) => ({ ...prevValue, loadingComplete: false }));
     setRefresh(true);
   });
 
@@ -43,8 +44,9 @@ export function Web3Provider(props) {
         let usdtBalance = await token.methods.balanceOf(addressAccount).call();
         usdtBalance = String(usdtBalance / Math.pow(10, decimals));
         tokens = [...tokens, { symbol, balance: usdtBalance }];
-        
+
         res.tokens = tokens;
+        res.loadingComplete = true;
         setWeb3Context(res);
         setRefresh(false);
       }
