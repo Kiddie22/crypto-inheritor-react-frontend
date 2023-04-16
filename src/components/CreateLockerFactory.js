@@ -6,7 +6,7 @@ import SuccessSnackbar from './Snackbars/SuccessSnackbar';
 import ErrorSnackbar from './Snackbars/ErrorSnackbar';
 
 export default function CreateLockerFactory() {
-  const { addressAccount, cryptoInheritorContract } = useWeb3Data();
+  const { addressAccount, cryptoInheritorContract, setRefresh } = useWeb3Data();
   const [isDisabled, setIsDisabled] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
@@ -16,15 +16,14 @@ export default function CreateLockerFactory() {
     setIsDisabled(true);
     setInfoOpen(true);
     try {
-      const response = await cryptoInheritorContract.methods
+      await cryptoInheritorContract.methods
         .newLockerFactory()
         .send({ from: addressAccount });
-      console.log(response);
       setIsDisabled(false);
       setInfoOpen(false);
       setSuccessOpen(true);
+      setRefresh(true);
     } catch (error) {
-      console.log(error);
       setIsDisabled(false);
       setInfoOpen(false);
       setErrorOpen(true);

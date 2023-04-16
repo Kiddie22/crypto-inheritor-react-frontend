@@ -10,7 +10,7 @@ import useWeb3Data from '../../hooks/useWeb3Data';
 import ConnectedWalletChip from '../ConnectedWalletChip';
 
 const Header = () => {
-  const { oracleIsRunning } = useWeb3Data();
+  const { lockerFactoryContract, oracleIsRunning } = useWeb3Data();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -24,37 +24,41 @@ const Header = () => {
               Crypto Inheritor
             </Link>
           </Typography>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link
-              to="/lockers"
-              style={{ textDecoration: 'inherit', color: 'inherit' }}
-            >
-              Lockers
-            </Link>
-          </Typography>
+          {lockerFactoryContract ? (
+            <>
+              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+                <Link
+                  to="/lockers"
+                  style={{ textDecoration: 'inherit', color: 'inherit' }}
+                >
+                  Lockers
+                </Link>
+              </Typography>
 
-          {oracleIsRunning ? (
-            <Chip label="Oracle Active" color="success" />
-          ) : (
-            <Chip label="Oracle Disabled" color="error" />
-          )}
+              {oracleIsRunning ? (
+                <Chip label="Oracle Active" color="success" />
+              ) : (
+                <Chip label="Oracle Disabled" color="error" />
+              )}
 
-          <ConnectedWalletChip />
+              <ConnectedWalletChip />
 
-          <Link
-            to="/wallet"
-            style={{
-              textDecoration: 'inherit',
-              color: 'inherit',
-              padding: '10px',
-            }}
-          >
-            <AccountBalanceWalletIcon />
-          </Link>
+              <Link
+                to="/wallet"
+                style={{
+                  textDecoration: 'inherit',
+                  color: 'inherit',
+                  padding: '10px',
+                }}
+              >
+                <AccountBalanceWalletIcon />
+              </Link>
 
-          <Link to="/profile">
-            <Avatar />
-          </Link>
+              <Link to="/profile">
+                <Avatar />
+              </Link>
+            </>
+          ) : null}
         </Toolbar>
       </AppBar>
     </Box>
