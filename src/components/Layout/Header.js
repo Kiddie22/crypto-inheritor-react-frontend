@@ -3,9 +3,8 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Avatar, Chip } from '@mui/material';
+import { Chip, Grid, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
-import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import useWeb3Data from '../../hooks/useWeb3Data';
 import ConnectedWalletChip from '../ConnectedWalletChip';
 
@@ -16,49 +15,85 @@ const Header = () => {
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            <Link
-              to="/"
-              style={{ textDecoration: 'inherit', color: 'inherit' }}
-            >
-              Crypto Inheritor
-            </Link>
-          </Typography>
-          {lockerFactoryContract ? (
-            <>
-              <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Grid
+            container
+            direction="row"
+            justifyContent="space-between"
+            alignItems="center"
+          >
+            <Grid item>
+              <Typography variant="h4">
                 <Link
-                  to="/lockers"
+                  to="/"
                   style={{ textDecoration: 'inherit', color: 'inherit' }}
                 >
-                  Lockers
+                  Crypto Inheritor
                 </Link>
               </Typography>
+            </Grid>
 
-              {oracleIsRunning ? (
-                <Chip label="Oracle Active" color="success" />
-              ) : (
-                <Chip label="Oracle Disabled" color="error" />
-              )}
+            {lockerFactoryContract ? (
+              <>
+                <Grid item>
+                  <Link
+                    to="/"
+                    style={{
+                      textDecoration: 'inherit',
+                      color: 'inherit',
+                      paddingRight: '10px',
+                    }}
+                  >
+                    Home
+                  </Link>
 
-              <ConnectedWalletChip />
+                  <Link
+                    to="/lockers"
+                    style={{
+                      textDecoration: 'inherit',
+                      color: 'inherit',
+                      paddingRight: '10px',
+                    }}
+                  >
+                    Lockers
+                  </Link>
 
-              <Link
-                to="/wallet"
-                style={{
-                  textDecoration: 'inherit',
-                  color: 'inherit',
-                  padding: '10px',
-                }}
-              >
-                <AccountBalanceWalletIcon />
-              </Link>
+                  <Link
+                    to="/wallet"
+                    style={{
+                      textDecoration: 'inherit',
+                      color: 'inherit',
+                      paddingRight: '10px',
+                    }}
+                  >
+                    Wallet
+                  </Link>
 
-              <Link to="/profile">
-                <Avatar />
-              </Link>
-            </>
-          ) : null}
+                  <Link
+                    to="/profile"
+                    style={{
+                      textDecoration: 'inherit',
+                      color: 'inherit',
+                      paddingRight: '10px',
+                    }}
+                  >
+                    Profile
+                  </Link>
+                </Grid>
+
+                <Grid item>
+                  <Stack direction="row">
+                    {oracleIsRunning ? (
+                      <Chip label="Oracle Active" color="success" />
+                    ) : (
+                      <Chip label="Oracle Disabled" color="error" />
+                    )}
+
+                    <ConnectedWalletChip />
+                  </Stack>
+                </Grid>
+              </>
+            ) : null}
+          </Grid>
         </Toolbar>
       </AppBar>
     </Box>

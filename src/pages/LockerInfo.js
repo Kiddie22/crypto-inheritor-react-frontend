@@ -72,7 +72,7 @@ const LockerInfo = () => {
       <h4>ETH balance: {ethBalance && ethBalance}</h4>
       <form onSubmit={depositEth}>
         <Stack direction="row" spacing={1} paddingBottom={3}>
-          <TextField placeholder="Amount" ref={amountRef} size="small" />
+          <TextField placeholder="Amount" inputRef={amountRef} size="small" />
           <Button type="submit" variant="contained" size="small">
             Add ETH to Locker
           </Button>

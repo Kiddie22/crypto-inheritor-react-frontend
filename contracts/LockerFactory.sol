@@ -9,14 +9,20 @@ contract LockerFactory is usingProvable {
     bool isAlive;
     bool oracleIsRunning;
     address contractOwner;
+    string username;
     string nationalId;
     mapping(uint256 => Locker) public lockers;
 
-    constructor(address owner) {
+    constructor(
+        address owner,
+        string memory _username,
+        string memory _nationalId
+    ) {
         contractOwner = owner;
         isAlive = true;
         oracleIsRunning = false;
-        nationalId = "undefined";
+        username = _username;
+        nationalId = _nationalId;
         OAR = OracleAddrResolverI(0x6f485C8BF6fc43eA212E93BBF8ce046C7f1cb475);
     }
 
@@ -42,8 +48,8 @@ contract LockerFactory is usingProvable {
         emit NewLocker(locker, msg.sender);
     }
 
-    function setNationalId(string memory _nationalId) public {
-        nationalId = _nationalId;
+    function getUsername() public view returns (string memory) {
+        return username;
     }
 
     function getNationalId() public view returns (string memory) {

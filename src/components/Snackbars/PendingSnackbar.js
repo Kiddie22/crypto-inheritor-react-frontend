@@ -1,4 +1,10 @@
-import { Alert, Snackbar } from '@mui/material';
+import {
+  Alert,
+  CircularProgress,
+  Snackbar,
+  Stack,
+  Typography,
+} from '@mui/material';
 
 const PendingSnackbar = ({ infoOpen, setInfoOpen }) => {
   return (
@@ -11,14 +17,11 @@ const PendingSnackbar = ({ infoOpen, setInfoOpen }) => {
         setInfoOpen(false);
       }}
     >
-      <Alert
-        onClose={() => {
-          setInfoOpen(false);
-        }}
-        severity="info"
-        sx={{ width: '100%' }}
-      >
-        Transaction Pending...
+      <Alert severity="info" icon={false} style={{ width: '100%' }}>
+        <Stack direction="row" spacing={3} style={{ width: '220px' }}>
+          <Typography>Transaction Pending...</Typography>
+          <CircularProgress size="20px" />
+        </Stack>
       </Alert>
     </Snackbar>
   );

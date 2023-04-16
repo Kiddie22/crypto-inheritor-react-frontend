@@ -7,12 +7,19 @@ contract CryptoInheritor {
     mapping(address => LockerFactory) private userToFactoryAddress;
     event NewLockerFactory(LockerFactory lockerFactory, address owner);
 
-    function newLockerFactory() public payable {
+    function newLockerFactory(
+        string memory username,
+        string memory nationalId
+    ) public payable {
         require(
             address(userToFactoryAddress[msg.sender]) == address(0x0),
             "You have already created a LockerFactory contract"
         );
-        LockerFactory lockerFactory = new LockerFactory(msg.sender);
+        LockerFactory lockerFactory = new LockerFactory(
+            msg.sender,
+            username,
+            nationalId
+        );
         lockerFactoryCount++;
         userToFactoryAddress[msg.sender] = lockerFactory;
         // payable(lockerFactory).transfer(msg.value);
