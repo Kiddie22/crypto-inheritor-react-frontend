@@ -55,7 +55,7 @@ export function Web3Provider(props) {
   }, [setWeb3Context, navigate, refresh]);
 
   return (
-    <Web3ContextData.Provider value={web3Context}>
+    <Web3ContextData.Provider value={{ ...web3Context, setRefresh }}>
       <Web3ContextApi.Provider value={setWeb3Context}>
         {children}
       </Web3ContextApi.Provider>
