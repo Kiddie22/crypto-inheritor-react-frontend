@@ -4,7 +4,6 @@ import "./Locker.sol";
 import "./provable/provableAPI.sol";
 
 contract LockerFactory is usingProvable {
-    uint256 public counter;
     uint256 numberOfLockers;
     bool isAlive;
     bool oracleIsRunning;
@@ -12,6 +11,8 @@ contract LockerFactory is usingProvable {
     string username;
     string nationalId;
     mapping(uint256 => Locker) public lockers;
+    uint256 public counter;
+    uint256 public triggerTime;
 
     constructor(
         address owner,
@@ -77,12 +78,18 @@ contract LockerFactory is usingProvable {
         if (keccak256(abi.encodePacked(result)) == keccak256("true")) {
             isAlive = true;
             counter++;
+            triggerTime = 0;
             getUser();
         } else {
-            isAlive = false;
-            oracleIsRunning = false;
-            counter++;
-            triggerFundTransfer();
+            if (counter > 0) {
+                isAlive = false;
+                triggerTime = block.timestamp + 300;
+                counter = 0;
+                getUser();
+            } else {
+                oracleIsRunning = false;
+                triggerFundTransfer();
+            }
         }
         emit LogReceivedData(myid, result);
     }
@@ -105,7 +112,25 @@ contract LockerFactory is usingProvable {
                 nationalId
             );
             path = string.concat(path, ").isAlive");
-            provable_query(60, "URL", path);
+            provable_query(5, "URL", path);
+        }
+    }
+
+    function manualOverride() public payable {
+        if (provable_getPrice("URL") > address(this).balance) {
+            emit LogNewProvableQuery(
+                "Provable query was NOT sent, please add some ETH to cover for the query fee"
+            );
+        } else {
+            emit LogNewProvableQuery(
+                "Provable query was sent, standing by for the answer.."
+            );
+            string memory path = string.concat(
+                "json(https://crypto-inheritor-backend.herokuapp.com/api/users/override/",
+                nationalId
+            );
+            path = string.concat(path, ").isAlive");
+            provable_query(5, "URL", path);
         }
     }
 

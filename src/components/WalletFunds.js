@@ -4,7 +4,6 @@ import useWeb3Data from '../hooks/useWeb3Data';
 import useWeb3Api from '../hooks/useWeb3Api';
 import {
   Button,
-  Grid,
   Paper,
   Stack,
   Table,
@@ -16,7 +15,7 @@ import {
   TextField,
 } from '@mui/material';
 
-const ExistingLockers = () => {
+const WalletFunds = () => {
   const { web3, addressAccount, tokens } = useWeb3Data();
   const setWeb3Context = useWeb3Api();
   const [balanceAddress, setBalanceAddress] = useState('');
@@ -42,16 +41,9 @@ const ExistingLockers = () => {
   };
 
   return (
-    <Grid
-      container
-      spacing={0}
-      direction="column"
-      alignItems="center"
-      justifyContent="center"
-      style={{ minHeight: '60vh' }}
-    >
+    <>
       <h3>Wallet Funds</h3>
-      <TableContainer component={Paper} style={{ maxWidth: '20vw' }}>
+      <TableContainer component={Paper}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -84,8 +76,8 @@ const ExistingLockers = () => {
           Check Balance
         </Button>
       </Stack>
-    </Grid>
+    </>
   );
 };
 
-export default ExistingLockers;
+export default WalletFunds;

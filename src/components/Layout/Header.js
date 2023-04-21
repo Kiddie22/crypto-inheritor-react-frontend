@@ -7,14 +7,24 @@ import { Chip, Grid, Stack } from '@mui/material';
 import { Link } from 'react-router-dom';
 import useWeb3Data from '../../hooks/useWeb3Data';
 import ConnectedWalletChip from '../ConnectedWalletChip';
+import { styled } from '@mui/system';
+
+const StyledAppBar = styled(AppBar)(({ theme }) => ({
+  marginBottom: '1rem',
+}));
+
+const StyledToolbar = styled(Toolbar)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'space-between',
+}));
 
 const Header = () => {
   const { lockerFactoryContract, oracleIsRunning } = useWeb3Data();
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
-        <Toolbar>
+      <StyledAppBar position="static">
+        <StyledToolbar>
           <Grid
             container
             direction="row"
@@ -31,71 +41,9 @@ const Header = () => {
                 </Link>
               </Typography>
             </Grid>
-
-            {lockerFactoryContract ? (
-              <>
-                <Grid item>
-                  <Link
-                    to="/"
-                    style={{
-                      textDecoration: 'inherit',
-                      color: 'inherit',
-                      paddingRight: '10px',
-                    }}
-                  >
-                    Home
-                  </Link>
-
-                  <Link
-                    to="/lockers"
-                    style={{
-                      textDecoration: 'inherit',
-                      color: 'inherit',
-                      paddingRight: '10px',
-                    }}
-                  >
-                    Lockers
-                  </Link>
-
-                  <Link
-                    to="/wallet"
-                    style={{
-                      textDecoration: 'inherit',
-                      color: 'inherit',
-                      paddingRight: '10px',
-                    }}
-                  >
-                    Wallet
-                  </Link>
-
-                  <Link
-                    to="/profile"
-                    style={{
-                      textDecoration: 'inherit',
-                      color: 'inherit',
-                      paddingRight: '10px',
-                    }}
-                  >
-                    Profile
-                  </Link>
-                </Grid>
-
-                <Grid item>
-                  <Stack direction="row">
-                    {oracleIsRunning ? (
-                      <Chip label="Oracle Active" color="success" />
-                    ) : (
-                      <Chip label="Oracle Disabled" color="error" />
-                    )}
-
-                    <ConnectedWalletChip />
-                  </Stack>
-                </Grid>
-              </>
-            ) : null}
           </Grid>
-        </Toolbar>
-      </AppBar>
+        </StyledToolbar>
+      </StyledAppBar>
     </Box>
   );
 };

@@ -6,43 +6,18 @@ import SuccessSnackbar from './Snackbars/SuccessSnackbar';
 import ErrorSnackbar from './Snackbars/ErrorSnackbar';
 
 const FactoryInfo = () => {
-  const { web3, addressAccount, lockerFactoryContractAddress } = useWeb3Data();
-  const [refresh, setRefresh] = useState(true);
-  const [ethBalance, setEthBalance] = useState(null);
+  const {
+    web3,
+    addressAccount,
+    lockerFactoryContractAddress,
+    lockerFactoryContractBalance,
+    setRefresh,
+  } = useWeb3Data();
   const [isDisabled, setIsDisabled] = useState(false);
   const [infoOpen, setInfoOpen] = useState(false);
   const [successOpen, setSuccessOpen] = useState(false);
   const [errorOpen, setErrorOpen] = useState(false);
   const amountRef = useRef(null);
-
-  useEffect(() => {
-    if (refresh === true) {
-      const getEthBalance = async () => {
-        if (
-          lockerFactoryContractAddress ===
-          '0x0000000000000000000000000000000000000000'
-        ) {
-          return 0;
-        }
-        const balance = await web3.eth.getBalance(lockerFactoryContractAddress);
-        if (balance) {
-          const etherValue = web3.utils.fromWei(balance, 'ether');
-          return etherValue;
-        } else {
-          return 0;
-        }
-      };
-
-      const fetchData = async () => {
-        if (lockerFactoryContractAddress) {
-          const ethBalance = await getEthBalance();
-          setEthBalance(ethBalance);
-          setRefresh(false);
-        }
-      };
-      fetchData();
-    }
-  }, [web3, refresh, lockerFactoryContractAddress]);
 
   const depositEth = async (e) => {
     try {
@@ -71,7 +46,10 @@ const FactoryInfo = () => {
 
   return (
     <Box>
-      <h4>ETH balance: {ethBalance && ethBalance}</h4>
+      <h4>
+        ETH balance:&nbsp;
+        {lockerFactoryContractBalance && lockerFactoryContractBalance}
+      </h4>
       <form onSubmit={depositEth}>
         <Stack direction="row" spacing={1} paddingBottom={3}>
           <TextField

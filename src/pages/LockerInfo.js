@@ -6,7 +6,7 @@ import { Button, Grid, Stack, TextField, Typography } from '@mui/material';
 
 const LockerInfo = () => {
   const { lockerAddress } = useParams();
-  const { web3, addressAccount } = useWeb3Data();
+  const { web3, addressAccount, setRefresh } = useWeb3Data();
   const [ethBalance, setEthBalance] = useState(null);
   const amountRef = useRef(null);
 
@@ -45,6 +45,8 @@ const LockerInfo = () => {
       to: lockerAddress,
       value: web3.utils.toWei(amount, 'ether'),
     });
+    amountRef.current.value = '';
+    setRefresh(true);
   };
 
   const withdrawEth = async () => {

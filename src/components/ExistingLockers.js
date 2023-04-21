@@ -51,11 +51,14 @@ export default function ExistingLockers(props) {
       <TableRow sx={{ '&:last-child td, &:last-child th': { border: 0 } }}>
         <TableCell>
           {lockerAddress && (
-            <Link to={`locker/${lockerAddress}`}>{lockerName}</Link>
+            <Link to={`lockers/locker/${lockerAddress}`}>{lockerName}</Link>
           )}
         </TableCell>
         <TableCell>{beneficiaryAddress && beneficiaryAddress}</TableCell>
-        <TableCell>{lockerAddress && lockerAddress}</TableCell>
+        <TableCell>
+          {lockerAddress &&
+            `${lockerAddress.substring(0, 6)}...${lockerAddress.substring(38)}`}
+        </TableCell>
       </TableRow>
     </>
   );

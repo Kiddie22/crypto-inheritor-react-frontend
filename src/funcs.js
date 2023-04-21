@@ -18,6 +18,9 @@ export const load = async () => {
     const lockerFactoryContract = await loadLockerFactoryContract(
       lockerFactoryContractAddress
     );
+    const lockerFactoryContractBalance = await getLockerFactoryContractBalance(
+      lockerFactoryContractAddress
+    );
     const numberOfLockers = await fetchNumberOfLockers(
       addressAccount,
       lockerFactoryContract
@@ -42,6 +45,7 @@ export const load = async () => {
       cryptoInheritorContract,
       lockerFactoryContractAddress,
       lockerFactoryContract,
+      lockerFactoryContractBalance,
       numberOfLockers,
       lockers,
       username,
@@ -81,6 +85,24 @@ export const loadLockerFactoryContract = async (
     lockerFactoryContractAddress
   );
   return lockerFactoryContract;
+};
+
+export const getLockerFactoryContractBalance = async (
+  lockerFactoryContractAddress
+) => {
+  if (
+    lockerFactoryContractAddress ===
+    '0x0000000000000000000000000000000000000000'
+  ) {
+    return 0;
+  }
+  const balance = await web3.eth.getBalance(lockerFactoryContractAddress);
+  if (balance) {
+    const etherValue = web3.utils.fromWei(balance, 'ether');
+    return etherValue;
+  } else {
+    return 0;
+  }
 };
 
 const loadCryptoInheritorContract = async () => {

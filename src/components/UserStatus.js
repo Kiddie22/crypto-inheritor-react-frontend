@@ -17,9 +17,7 @@ const UserStatus = () => {
   }, [addressAccount, lockerFactoryContract]);
 
   return (
-    <div>
-      <h5>User is alive? {isAlive ? <span>true</span> : <span>false</span>}</h5>
-    </div>
+    <p>User is alive? {isAlive ? <span>true</span> : <span>false</span>}</p>
   );
 };
 

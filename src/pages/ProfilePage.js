@@ -1,6 +1,7 @@
-import { Avatar, Grid, TextField } from '@mui/material';
+import { Grid, TextField, Typography } from '@mui/material';
 import UserStatus from '../components/UserStatus';
 import useWeb3Data from '../hooks/useWeb3Data';
+import ConnectedWalletChip from '../components/ConnectedWalletChip';
 
 const ProfilePage = () => {
   const { username, nationalId } = useWeb3Data();
@@ -8,15 +9,13 @@ const ProfilePage = () => {
   return (
     <Grid
       container
-      spacing={0}
       direction="column"
       alignItems="center"
       justifyContent="center"
     >
-      <h1>Profile</h1>
-      <Avatar sx={{ width: 56, height: 56 }} />
+      <Typography variant='h6'>Profile</Typography>
+      <ConnectedWalletChip />
       <UserStatus />
-
       <TextField
         label="Username"
         defaultValue={username}

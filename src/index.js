@@ -7,7 +7,6 @@ import LockerInfo from './pages/LockerInfo';
 import Layout from './components/Layout/Layout';
 import { Web3Provider } from './context/Web3Provider';
 import ProfilePage from './pages/ProfilePage';
-import WalletPage from './pages/WalletPage';
 import Login from './pages/Login';
 import Lockers from './pages/Lockers';
 
@@ -20,7 +19,6 @@ root.render(
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<ProfilePage />} />
-          <Route path="/wallet" element={<WalletPage />} />
           <Route path="/lockers" element={<Lockers />} />
           <Route
             path="/lockers/locker/:lockerAddress"

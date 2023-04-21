@@ -1,20 +1,32 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import useWeb3Data from '../hooks/useWeb3Data';
-import { Button } from '@mui/material';
+import { Button, Chip, Typography } from '@mui/material';
+import Countdown from './Countdown';
 
 const ActivateProvable = () => {
-  const { addressAccount, lockerFactoryContract } = useWeb3Data();
+  const { addressAccount, lockerFactoryContract, oracleIsRunning, setRefresh } =
+    useWeb3Data();
+  const [triggerTime, setTriggerTime] = useState(0);
 
   useEffect(() => {
-    const fetchCounter = async () => {
+    const interval = setInterval(() => {
+      setRefresh(true);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const fetchTriggerTime = async () => {
       if ((addressAccount, lockerFactoryContract)) {
         const res = await lockerFactoryContract.methods
-          .counter()
+          .triggerTime()
           .call({ from: addressAccount });
-        console.log(res);
+        setTriggerTime(res);
       }
     };
-    fetchCounter();
+    // fetchCounter();
+    fetchTriggerTime();
   }, [addressAccount, lockerFactoryContract]);
 
   const activateProvable = async () => {
@@ -24,10 +36,44 @@ const ActivateProvable = () => {
     console.log(res);
   };
 
+  const overrideTrigger = async () => {
+    const res = await lockerFactoryContract.methods
+      .manualOverride()
+      .send({ from: addressAccount });
+    console.log(res);
+  };
+
   return (
-    <Button onClick={activateProvable} variant="contained">
-      ACTIVATE
-    </Button>
+    <>
+      <Typography variant="body1">
+        It is recommended to keep a minimum of 0.1 ETH in your LockerFactory
+        contract to ensure the Provable oracle can function properly
+      </Typography>
+        {oracleIsRunning ? (
+        <Chip
+          label="Oracle Active"
+          color="success"
+          style={{ width: '200px' }}
+        />
+      ) : (
+        <Chip
+          label="Oracle Disabled"
+          color="error"
+          style={{ width: '200px' }}
+        />
+      )}
+      {triggerTime === '0' && (
+        <Button onClick={activateProvable} variant="contained">
+          ACTIVATE
+        </Button>
+      )}
+      <Countdown endTime={triggerTime} />
+      {triggerTime !== '0' && (
+        <Button onClick={overrideTrigger} variant="contained">
+          DEACTIVATE
+        </Button>
+      )}
+    </>
   );
 };
 

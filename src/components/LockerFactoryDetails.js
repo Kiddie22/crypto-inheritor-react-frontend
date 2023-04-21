@@ -30,7 +30,7 @@ export default function LockerFactoryContract() {
 
   return (
     <Box>
-      <Typography variant="h6" gutterBottom>
+      <Typography variant="h6">
         LockerFactory Contract
       </Typography>
       <p>{lockerFactoryContractAddress}</p>

@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import useWeb3Data from '../hooks/useWeb3Data';
-import { Button, Stack, TextField, Typography } from '@mui/material';
+import { Box, Button, TextField, Typography } from '@mui/material';
 import PendingSnackbar from './Snackbars/PendingSnackbar';
 import SuccessSnackbar from './Snackbars/SuccessSnackbar';
 import ErrorSnackbar from './Snackbars/ErrorSnackbar';
@@ -43,12 +43,12 @@ export default function NewLocker() {
   };
 
   return (
-    <>
-      <Typography variant="h6" gutterBottom>
+    <Box sx={{ mt: 4 }}>
+      <Typography variant="h6" mb={2}>
         Create new Locker
       </Typography>
       <form onSubmit={createNewLocker}>
-        <Stack direction="row" spacing={1} paddingBottom={3}>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2 }}>
           <TextField
             label="Locker Name"
             variant="outlined"
@@ -63,7 +63,6 @@ export default function NewLocker() {
             inputRef={benefAddressRef}
             required
           />
-          <br />
           <Button
             type="submit"
             variant="contained"
@@ -72,7 +71,7 @@ export default function NewLocker() {
           >
             Create New Locker
           </Button>
-        </Stack>
+        </Box>
       </form>
       <PendingSnackbar infoOpen={infoOpen} setInfoOpen={setInfoOpen} />
       <SuccessSnackbar
@@ -80,6 +79,6 @@ export default function NewLocker() {
         setSuccessOpen={setSuccessOpen}
       />
       <ErrorSnackbar errorOpen={errorOpen} setErrorOpen={setErrorOpen} />
-    </>
+    </Box>
   );
 }
