@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import useWeb3Data from '../hooks/useWeb3Data';
-import { Button, Chip, Typography } from '@mui/material';
+import { Box, Button, Chip, Typography } from '@mui/material';
 import Countdown from './Countdown';
 
 const ActivateProvable = () => {
@@ -44,22 +44,22 @@ const ActivateProvable = () => {
   };
 
   return (
-    <>
-      <Typography variant="body1">
+    <Box sx={{ mt: 4 }}>
+      <Typography variant="body1" mb={2}>
         It is recommended to keep a minimum of 0.1 ETH in your LockerFactory
         contract to ensure the Provable oracle can function properly
       </Typography>
-        {oracleIsRunning ? (
+      {oracleIsRunning ? (
         <Chip
           label="Oracle Active"
           color="success"
-          style={{ width: '200px' }}
+          style={{ width: '200px', marginBottom: '2rem'  }}
         />
       ) : (
         <Chip
           label="Oracle Disabled"
           color="error"
-          style={{ width: '200px' }}
+          style={{ width: '200px', marginBottom: '2rem' }}
         />
       )}
       {triggerTime === '0' && (
@@ -73,7 +73,7 @@ const ActivateProvable = () => {
           DEACTIVATE
         </Button>
       )}
-    </>
+    </Box>
   );
 };
 

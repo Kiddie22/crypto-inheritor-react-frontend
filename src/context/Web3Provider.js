@@ -29,6 +29,7 @@ export function Web3Provider(props) {
         const etherValue = web3.utils.fromWei(ethBalance, 'ether');
         const newToken = { symbol: 'ETH', balance: etherValue };
         res.tokens = [...tokens, newToken];
+        res.ethBalance = etherValue;
         res.loadingComplete = true;
         setWeb3Context(res);
         setRefresh(false);

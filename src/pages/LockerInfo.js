@@ -56,8 +56,9 @@ const LockerInfo = () => {
       lockerAddress
     );
     lockerContract.methods
-      .withdraw(web3.utils.toWei('1', 'ether'))
+      .withdraw(web3.utils.toWei(ethBalance, 'ether'))
       .send({ from: addressAccount });
+    setRefresh(true);
   };
 
   return (

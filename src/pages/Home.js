@@ -3,12 +3,13 @@ import LockerFactoryDetails from '../components/LockerFactoryDetails';
 import ActivateProvable from '../components/ActivateProvable';
 import ProfilePage from './ProfilePage';
 import useWeb3Data from '../hooks/useWeb3Data';
-import WalletFunds from '../components/WalletFunds';
+import WalletFundsCard from '../components/WalletFundsCard';
 import CreateLockerFactory from '../components/CreateLockerFactory';
 import { styled } from '@mui/system';
 import { Box, Container, Grid, CircularProgress } from '@mui/material';
 import NewLocker from '../components/NewLocker';
 import LockerTable from '../components/LockerTable';
+import AssetDistribution from '../components/AssetDistribution';
 
 const WidgetBox = styled(Box)(({ theme }) => ({
   boxShadow: 2,
@@ -80,10 +81,17 @@ const Home = () => {
               </WidgetBox>
             </Box>
           </Grid>
-          <Grid item md={12}>
+          <Grid item md={6}>
             <Box boxShadow={6} p={2}>
               <WidgetBox>
-                <WalletFunds />
+                <WalletFundsCard />
+              </WidgetBox>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Box boxShadow={6} p={2}>
+              <WidgetBox>
+                <AssetDistribution />
               </WidgetBox>
             </Box>
           </Grid>
