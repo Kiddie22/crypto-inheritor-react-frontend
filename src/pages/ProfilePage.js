@@ -15,7 +15,8 @@ const ProfilePage = () => {
     >
       <Typography variant='h6'>Profile</Typography>
       <ConnectedWalletChip />
-      <UserStatus />
+      {/* <UserStatus /> */}
+      <br />
       <TextField
         label="Username"
         defaultValue={username}

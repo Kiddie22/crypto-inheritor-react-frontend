@@ -14,7 +14,7 @@ import AssetDistribution from '../components/AssetDistribution';
 const WidgetBox = styled(Box)(({ theme }) => ({
   boxShadow: 2,
   padding: theme.spacing(2),
-  minHeight: '300px',
+  minHeight: '250px',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',

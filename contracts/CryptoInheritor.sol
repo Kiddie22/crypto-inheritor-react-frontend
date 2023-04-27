@@ -1,10 +1,25 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.17;
 import "./LockerFactory.sol";
+import "./AdminContract.sol";
+
+interface IAdminContract {
+    function addToMapping(address _address, string memory _nationalId) external;
+}
 
 contract CryptoInheritor {
     uint256 public lockerFactoryCount;
     mapping(address => LockerFactory) private userToFactoryAddress;
+    IAdminContract private adminContract;
+
+    constructor(address _adminContractAddress) {
+        require(
+            _adminContractAddress != address(0),
+            "Invalid AdminContract address"
+        );
+        adminContract = IAdminContract(_adminContractAddress);
+    }
+
     event NewLockerFactory(LockerFactory lockerFactory, address owner);
 
     function newLockerFactory(
@@ -22,6 +37,7 @@ contract CryptoInheritor {
         );
         lockerFactoryCount++;
         userToFactoryAddress[msg.sender] = lockerFactory;
+        adminContract.addToMapping(address(lockerFactory), nationalId);
         emit NewLockerFactory(lockerFactory, msg.sender);
     }
 

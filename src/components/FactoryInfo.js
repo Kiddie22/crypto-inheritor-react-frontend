@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import useWeb3Data from '../hooks/useWeb3Data';
 import { Box, Button, Stack, TextField } from '@mui/material';
 import PendingSnackbar from './Snackbars/PendingSnackbar';
@@ -58,6 +58,7 @@ const FactoryInfo = () => {
             variant="outlined"
             inputRef={amountRef}
             required
+            size="small"
           />
           <Button type="submit" variant="contained" disabled={isDisabled}>
             Add ETH

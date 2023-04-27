@@ -4,8 +4,13 @@ import { Box, Button, Chip, Typography } from '@mui/material';
 import Countdown from './Countdown';
 
 const ActivateProvable = () => {
-  const { addressAccount, lockerFactoryContract, oracleIsRunning, setRefresh } =
-    useWeb3Data();
+  const {
+    addressAccount,
+    lockerFactoryContract,
+    oracleIsRunning,
+    setRefresh,
+    lockerFactoryContractBalance,
+  } = useWeb3Data();
   const [triggerTime, setTriggerTime] = useState(0);
 
   useEffect(() => {
@@ -44,31 +49,54 @@ const ActivateProvable = () => {
   };
 
   return (
-    <Box sx={{ mt: 4 }}>
-      <Typography variant="body1" mb={2}>
-        It is recommended to keep a minimum of 0.1 ETH in your LockerFactory
-        contract to ensure the Provable oracle can function properly
+    <Box
+      sx={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        mt: 4,
+      }}
+    >
+      <Typography
+        variant="body1"
+        mb={2}
+        display={
+          lockerFactoryContractBalance < 0.1 && !oracleIsRunning
+            ? 'inherit'
+            : 'none'
+        }
+      >
+        A minimum of 0.1 ETH should be depoisted in the LockerFactory to
+        activate the oracle
       </Typography>
       {oracleIsRunning ? (
         <Chip
           label="Oracle Active"
           color="success"
-          style={{ width: '200px', marginBottom: '2rem'  }}
+          variant="outlined"
+          style={{ width: '150px', marginBottom: '2rem' }}
         />
       ) : (
         <Chip
           label="Oracle Disabled"
           color="error"
-          style={{ width: '200px', marginBottom: '2rem' }}
+          variant="outlined"
+          style={{ width: '150px', marginBottom: '2rem' }}
         />
       )}
-      {triggerTime === '0' && (
-        <Button onClick={activateProvable} variant="contained">
+      {!oracleIsRunning && (
+        <Button
+          onClick={activateProvable}
+          variant="contained"
+          disabled={lockerFactoryContractBalance < 0.1}
+        >
           ACTIVATE
         </Button>
       )}
+      {/* need a separate override button and a deactivate button */}
       <Countdown endTime={triggerTime} />
-      {triggerTime !== '0' && (
+      {oracleIsRunning && (
         <Button onClick={overrideTrigger} variant="contained">
           DEACTIVATE
         </Button>

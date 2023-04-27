@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { Box, CircularProgress, Grid, Typography } from '@mui/material';
+import { Box, Chip, CircularProgress, Grid, Typography } from '@mui/material';
 import useWeb3Data from '../hooks/useWeb3Data';
 import FactoryInfo from './FactoryInfo';
 
 export default function LockerFactoryContract() {
-  const { lockerFactoryContractAddress } = useWeb3Data();
+  const { lockerFactoryContractAddress, isFundsTransferred } = useWeb3Data();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -32,6 +32,12 @@ export default function LockerFactoryContract() {
     <Box>
       <Typography variant="h6">
         LockerFactory Contract
+        &nbsp;
+        {!isFundsTransferred ? (
+          <Chip label="ACTIVE" color="success" variant="outlined" />
+        ) : (
+          <Chip label="ENFORCED" color="error" variant="outlined" />
+        )}
       </Typography>
       <p>{lockerFactoryContractAddress}</p>
       <FactoryInfo />

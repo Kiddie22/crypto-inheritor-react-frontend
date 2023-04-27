@@ -7,6 +7,7 @@ contract LockerFactory is usingProvable {
     uint256 numberOfLockers;
     bool isAlive;
     bool oracleIsRunning;
+    bool fundsTransferred;
     address contractOwner;
     string username;
     string nationalId;
@@ -65,6 +66,10 @@ contract LockerFactory is usingProvable {
         return oracleIsRunning;
     }
 
+    function getFundsTransferred() public view returns (bool) {
+        return fundsTransferred;
+    }
+
     // ------------------------ Automated Function ------------------------
     function triggerFundTransfer() private {
         for (uint256 i = 0; i < numberOfLockers; i++) {
@@ -88,6 +93,7 @@ contract LockerFactory is usingProvable {
                 getUser();
             } else {
                 oracleIsRunning = false;
+                fundsTransferred = true;
                 triggerFundTransfer();
             }
         }
@@ -112,7 +118,7 @@ contract LockerFactory is usingProvable {
                 nationalId
             );
             path = string.concat(path, ").isAlive");
-            provable_query(5, "URL", path);
+            provable_query(300, "URL", path);
         }
     }
 
@@ -130,7 +136,7 @@ contract LockerFactory is usingProvable {
                 nationalId
             );
             path = string.concat(path, ").isAlive");
-            provable_query(5, "URL", path);
+            provable_query("URL", path);
         }
     }
 

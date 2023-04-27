@@ -39,6 +39,10 @@ export const load = async () => {
       addressAccount,
       lockerFactoryContract
     );
+    const isFundsTransferred = await getFundsTransferred(
+      addressAccount,
+      lockerFactoryContract
+    );
     return {
       web3,
       addressAccount,
@@ -51,6 +55,7 @@ export const load = async () => {
       username,
       nationalId,
       oracleIsRunning,
+      isFundsTransferred,
     };
   }
   return {
@@ -154,4 +159,11 @@ const getOracleIsRunning = async (addressAccount, lockerFactoryContract) => {
     .getOracleIsRunning()
     .call({ from: addressAccount });
   return isRunning;
+};
+
+const getFundsTransferred = async (addressAccount, lockerFactoryContract) => {
+  const isFundsTransferred = await lockerFactoryContract.methods
+    .getFundsTransferred()
+    .call({ from: addressAccount });
+  return isFundsTransferred;
 };

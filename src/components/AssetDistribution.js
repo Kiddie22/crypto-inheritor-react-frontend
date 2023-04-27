@@ -12,7 +12,7 @@ const AssetDistribution = () => {
   });
 
   useEffect(() => {
-    const populateAssets = async () => {
+    const populateAssets = () => {
       if ((ethBalance, lockers, addressAccount)) {
         var tempArr = [];
         lockers.forEach(async (locker) => {
@@ -32,8 +32,13 @@ const AssetDistribution = () => {
           datasets: [
             {
               data: assets.map((asset) => asset.balance),
-              backgroundColor: ['#076AAB', '#36A2EB', '#68B5E8'],
-              hoverBackgroundColor: ['#076AAB', '#36A2EB', '#68B5E8'],
+              backgroundColor: ['#076AAB', '#36A2EB', '#68B5E8', '#BBDCF2'],
+              hoverBackgroundColor: [
+                '#076AAB',
+                '#36A2EB',
+                '#68B5E8',
+                '#BBDCF2',
+              ],
             },
           ],
         };
