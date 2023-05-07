@@ -6,7 +6,7 @@ import useWeb3Data from '../hooks/useWeb3Data';
 import WalletFundsCard from '../components/WalletFundsCard';
 import CreateLockerFactory from '../components/CreateLockerFactory';
 import { styled } from '@mui/system';
-import { Box, Container, Grid, CircularProgress } from '@mui/material';
+import { Alert, Box, Container, Grid, CircularProgress } from '@mui/material';
 import NewLocker from '../components/NewLocker';
 import LockerTable from '../components/LockerTable';
 import AssetDistribution from '../components/AssetDistribution';
@@ -22,6 +22,21 @@ const WidgetBox = styled(Box)(({ theme }) => ({
 
 const Home = () => {
   const web3Data = useWeb3Data();
+
+  if (web3Data.isError) {
+    return (
+      <Grid
+        container
+        spacing={0}
+        direction="column"
+        alignItems="center"
+        justifyContent="center"
+        style={{ minHeight: '80vh' }}
+      >
+        <Alert severity="error">{web3Data.isError}</Alert>
+      </Grid>
+    );
+  }
 
   if (!web3Data.loadingComplete) {
     return (

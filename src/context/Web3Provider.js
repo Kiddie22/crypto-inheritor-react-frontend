@@ -16,7 +16,43 @@ export function Web3Provider(props) {
       setWeb3Context((prevValue) => ({ ...prevValue, loadingComplete: false }));
       setRefresh(true);
     });
+    window.ethereum.on('chainChanged', async () => {
+      window.location.reload();
+    });
   }
+
+  async function checkNetwork() {
+    try {
+      const networkId = await window.ethereum.request({
+        method: 'net_version',
+      });
+      const desiredNetworkId = '11155111'; // Sepolia
+      if (networkId !== desiredNetworkId) {
+        setWeb3Context((prevValue) => ({
+          ...prevValue,
+          isError: 'Connect Metamask to the Sepolia Network',
+        }));
+      }
+    } catch (error) {
+      console.error('Error getting network ID:', error);
+    }
+  }
+
+  window.addEventListener('load', function () {
+    if (window.ethereum) {
+      if (window.ethereum.isMetaMask) {
+        checkNetwork();
+      } else {
+        console.log('MetaMask is not available');
+      }
+    } else {
+      console.log('Ethereum support is not found');
+      setWeb3Context((prevValue) => ({
+        ...prevValue,
+        isError: 'Ethereum support is not found',
+      }));
+    }
+  });
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,6 +61,7 @@ export function Web3Provider(props) {
         if (!res.addressAccount) {
           navigate('login');
         }
+        console.log({ res });
         const { addressAccount, web3 } = res;
         let tokens = [];
         const ethBalance = await web3.eth.getBalance(addressAccount);
