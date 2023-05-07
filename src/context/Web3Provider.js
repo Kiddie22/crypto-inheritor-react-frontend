@@ -11,10 +11,12 @@ export function Web3Provider(props) {
   const [refresh, setRefresh] = useState(true);
   const navigate = useNavigate();
 
-  window.ethereum.on('accountsChanged', async () => {
-    setWeb3Context((prevValue) => ({ ...prevValue, loadingComplete: false }));
-    setRefresh(true);
-  });
+  if (typeof window.ethereum !== 'undefined') {
+    window.ethereum.on('accountsChanged', async () => {
+      setWeb3Context((prevValue) => ({ ...prevValue, loadingComplete: false }));
+      setRefresh(true);
+    });
+  }
 
   useEffect(() => {
     const fetchData = async () => {

@@ -3,10 +3,8 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import { Chip, Grid, Stack } from '@mui/material';
+import { Grid } from '@mui/material';
 import { Link } from 'react-router-dom';
-import useWeb3Data from '../../hooks/useWeb3Data';
-import ConnectedWalletChip from '../ConnectedWalletChip';
 import { styled } from '@mui/system';
 
 const StyledAppBar = styled(AppBar)(({ theme }) => ({
@@ -19,8 +17,6 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
 }));
 
 const Header = () => {
-  const { lockerFactoryContract, oracleIsRunning } = useWeb3Data();
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <StyledAppBar position="static">

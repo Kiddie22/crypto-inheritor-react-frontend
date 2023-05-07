@@ -16,12 +16,14 @@ const AssetDistribution = () => {
       if ((ethBalance, lockers, addressAccount)) {
         var tempArr = [];
         lockers.forEach(async (locker) => {
+          if (locker === '0') return;
           const balance = await getEthBalance(web3, locker);
           const obj = { account: locker, balance: +balance };
           tempArr.push(obj);
         });
         tempArr.push({ account: addressAccount, balance: +ethBalance });
         setAssets(tempArr);
+        generatePieChartData();
       }
     };
 
@@ -47,7 +49,6 @@ const AssetDistribution = () => {
     };
 
     populateAssets();
-    generatePieChartData();
   }, [ethBalance, lockers, addressAccount, web3]);
 
   const getEthBalance = async (web3, lockerAddress) => {

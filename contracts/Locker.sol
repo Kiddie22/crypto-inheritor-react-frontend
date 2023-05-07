@@ -1,16 +1,26 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.17;
 import "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol";
+import "@openzeppelin/contracts/token/ERC20/utils/SafeERC20.sol";
 
 contract Locker {
-    string public name;
-    address owner;
-    address beneficiary;
+    using SafeERC20 for IERC20;
 
-    constructor(string memory _name, address _owner, address _beneficiary) {
+    string public name;
+    address private owner;
+    address private beneficiary;
+    address private lockerFactoryAddress;
+
+    constructor(
+        string memory _name,
+        address _owner,
+        address _beneficiary,
+        address _lockerFactoryAddress
+    ) {
         name = _name;
         owner = _owner;
         beneficiary = _beneficiary;
+        lockerFactoryAddress = _lockerFactoryAddress;
     }
 
     // Modifier to check that the caller is the owner of the contract
@@ -19,19 +29,21 @@ contract Locker {
         _;
     }
 
+    modifier isLockerFactory() {
+        require(msg.sender == lockerFactoryAddress, "Invalid call");
+        _;
+    }
+
     event WithdrewERC20(address token, address by, uint256 amount);
     event Withdrew(address by, uint256 amount);
     event Received(uint256 amount);
 
     // ------------------------ Owner Functions ------------------------
-    function withdrawERC20(
-        address _tokenAddress,
-        uint256 _amount
-    ) external isOwner {
-        IERC20Metadata token = IERC20Metadata(_tokenAddress);
-        uint256 balance = token.balanceOf(address(this));
+    function withdrawERC20(address _tokenAddress, uint256 _amount) external isOwner {
+        IERC20 erc20Token = IERC20(_tokenAddress);
+        uint256 balance = erc20Token.balanceOf(address(this));
         require(balance >= _amount, "Not Enought Balance !");
-        token.transfer(msg.sender, _amount);
+        erc20Token.safeTransfer(msg.sender, _amount);
         emit WithdrewERC20(_tokenAddress, msg.sender, _amount);
     }
 
@@ -50,7 +62,7 @@ contract Locker {
     }
 
     // ------------------------ Beneficiary Automated Function ------------------------
-    function transferFundsToBeneficiary() external {
+    function transferFundsToBeneficiary() external isLockerFactory {
         payable(beneficiary).transfer(address(this).balance);
     }
 

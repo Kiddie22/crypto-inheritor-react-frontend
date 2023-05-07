@@ -42,7 +42,7 @@ contract LockerFactory is usingProvable {
     }
 
     function createNewLocker(string memory _name, address _beneficiary) public {
-        Locker locker = new Locker(_name, msg.sender, _beneficiary);
+        Locker locker = new Locker(_name, msg.sender, _beneficiary, address(this));
         // Add mapping
         lockers[numberOfLockers] = locker;
         numberOfLockers++;
@@ -88,7 +88,7 @@ contract LockerFactory is usingProvable {
         } else {
             if (counter > 0) {
                 isAlive = false;
-                triggerTime = block.timestamp + 300;
+                triggerTime = block.timestamp + 60;
                 counter = 0;
                 getUser();
             } else {
@@ -107,9 +107,7 @@ contract LockerFactory is usingProvable {
             );
             oracleIsRunning = false;
         } else {
-            emit LogNewProvableQuery(
-                "Provable query was sent, standing by for the answer.."
-            );
+            emit LogNewProvableQuery("Provable query was sent, standing by for the answer..");
             if (oracleIsRunning == false) {
                 oracleIsRunning = true;
             }
@@ -118,7 +116,7 @@ contract LockerFactory is usingProvable {
                 nationalId
             );
             path = string.concat(path, ").isAlive");
-            provable_query(300, "URL", path);
+            provable_query(60, "URL", path);
         }
     }
 
@@ -128,9 +126,7 @@ contract LockerFactory is usingProvable {
                 "Provable query was NOT sent, please add some ETH to cover for the query fee"
             );
         } else {
-            emit LogNewProvableQuery(
-                "Provable query was sent, standing by for the answer.."
-            );
+            emit LogNewProvableQuery("Provable query was sent, standing by for the answer..");
             string memory path = string.concat(
                 "json(https://crypto-inheritor-backend.herokuapp.com/api/users/override/",
                 nationalId
