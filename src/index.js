@@ -9,6 +9,7 @@ import { Web3Provider } from './context/Web3Provider';
 import ProfilePage from './pages/ProfilePage';
 import Login from './pages/Login';
 import Lockers from './pages/Lockers';
+import Help from './pages/Help';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -17,6 +18,7 @@ root.render(
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
+          <Route path="/help" element={<Help />} />
           <Route path="/login" element={<Login />} />
           <Route path="/profile" element={<ProfilePage />} />
           <Route path="/lockers" element={<Lockers />} />

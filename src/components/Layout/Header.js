@@ -37,6 +37,17 @@ const Header = () => {
                 </Link>
               </Typography>
             </Grid>
+
+            <Grid item>
+              <Typography variant="body1">
+                <Link
+                  to="/help"
+                  style={{ textDecoration: 'inherit', color: 'inherit' }}
+                >
+                  How it works
+                </Link>
+              </Typography>
+            </Grid>
           </Grid>
         </StyledToolbar>
       </StyledAppBar>
