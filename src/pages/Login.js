@@ -25,7 +25,7 @@ const Login = () => {
       direction="column"
       alignItems="center"
       justifyContent="center"
-      style={{ minHeight: '100vh' }}
+      style={{ minHeight: '80vh' }}
     >
       <Button onClick={connect} variant="outlined">
         Connect Wallet
