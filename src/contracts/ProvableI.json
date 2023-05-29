@@ -305,7 +305,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >= 0.8.0 < 0.9.0;\n\ninterface ProvableI {\n    function setProofType(bytes1 _proofType) external;\n    function setCustomGasPrice(uint _gasPrice) external;\n    function cbAddress() external returns (address _cbAddress);\n    function randomDS_getSessionPubKeyHash() external view returns (bytes32 _sessionKeyHash);\n\n    function getPrice(\n        string calldata _datasource\n    ) external returns (uint _dsprice);\n\n    function getPrice(\n        string calldata _datasource,\n        uint _gasLimit\n    )  external returns (uint _dsprice);\n\n    function queryN(\n        uint _timestamp,\n        string calldata _datasource,\n        bytes calldata _argN\n    ) external payable returns (bytes32 _id);\n\n    function query(\n        uint _timestamp,\n        string calldata _datasource,\n        string calldata _arg\n    ) external payable returns (bytes32 _id);\n\n    function query2(\n        uint _timestamp,\n        string calldata _datasource,\n        string calldata _arg1,\n        string calldata _arg2\n    ) external payable returns (bytes32 _id);\n\n    function query_withGasLimit(\n        uint _timestamp,\n        string calldata _datasource,\n        string calldata _arg,\n        uint _gasLimit\n    ) external payable returns (bytes32 _id);\n\n    function queryN_withGasLimit(\n        uint _timestamp,\n        string calldata _datasource,\n        bytes calldata _argN,\n        uint _gasLimit\n    ) external payable returns (bytes32 _id);\n\n    function query2_withGasLimit(\n        uint _timestamp,\n        string calldata _datasource,\n        string calldata _arg1,\n        string calldata _arg2,\n        uint _gasLimit\n    ) external payable returns (bytes32 _id);\n}\n",
-  "sourcePath": "C:\\Users\\Rasula\\Documents\\GitHub\\crypto-inheritor-react-frontend\\contracts\\provable\\interfaces\\provable-interface.sol",
+  "sourcePath": "C:\\Users\\Rasula\\Desktop\\crypto inheritor\\crypto-inheritor-react-frontend\\contracts\\provable\\interfaces\\provable-interface.sol",
   "ast": {
     "absolutePath": "project:/contracts/provable/interfaces/provable-interface.sol",
     "exportedSymbols": {
@@ -1731,7 +1731,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-05-09T13:15:42.217Z",
+  "updatedAt": "2023-05-29T02:03:31.906Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

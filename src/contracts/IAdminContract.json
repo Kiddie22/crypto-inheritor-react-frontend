@@ -29,7 +29,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: UNLICENSED\r\npragma solidity ^0.8.17;\r\nimport \"./LockerFactory.sol\";\r\nimport \"./AdminContract.sol\";\r\n\r\ninterface IAdminContract {\r\n    function addToMapping(address _address, string memory _nationalId) external;\r\n}\r\n\r\ncontract CryptoInheritor {\r\n    uint256 public lockerFactoryCount;\r\n    mapping(address => LockerFactory) private userToFactoryAddress;\r\n    IAdminContract private adminContract;\r\n\r\n    constructor(address _adminContractAddress) {\r\n        require(\r\n            _adminContractAddress != address(0),\r\n            \"Invalid AdminContract address\"\r\n        );\r\n        adminContract = IAdminContract(_adminContractAddress);\r\n    }\r\n\r\n    event NewLockerFactory(LockerFactory lockerFactory, address owner);\r\n\r\n    function newLockerFactory(\r\n        string memory username,\r\n        string memory nationalId\r\n    ) public payable {\r\n        require(\r\n            address(userToFactoryAddress[msg.sender]) == address(0x0),\r\n            \"You have already created a LockerFactory contract\"\r\n        );\r\n        LockerFactory lockerFactory = new LockerFactory(\r\n            msg.sender,\r\n            username,\r\n            nationalId\r\n        );\r\n        lockerFactoryCount++;\r\n        userToFactoryAddress[msg.sender] = lockerFactory;\r\n        adminContract.addToMapping(address(lockerFactory), nationalId);\r\n        emit NewLockerFactory(lockerFactory, msg.sender);\r\n    }\r\n\r\n    function getFactoryContractAddress() public view returns (LockerFactory) {\r\n        return userToFactoryAddress[msg.sender];\r\n    }\r\n}\r\n",
-  "sourcePath": "C:\\Users\\Rasula\\Documents\\GitHub\\crypto-inheritor-react-frontend\\contracts\\CryptoInheritor.sol",
+  "sourcePath": "C:\\Users\\Rasula\\Desktop\\crypto inheritor\\crypto-inheritor-react-frontend\\contracts\\CryptoInheritor.sol",
   "ast": {
     "absolutePath": "project:/contracts/CryptoInheritor.sol",
     "exportedSymbols": {
@@ -1712,7 +1712,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-05-09T13:15:42.153Z",
+  "updatedAt": "2023-05-29T02:03:31.835Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

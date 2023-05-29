@@ -24,7 +24,7 @@
   "sourceMap": "",
   "deployedSourceMap": "",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >= 0.8.0 < 0.9.0;\n\ninterface OracleAddrResolverI {\n    function getAddress() external returns (address _address);\n}\n",
-  "sourcePath": "C:\\Users\\Rasula\\Documents\\GitHub\\crypto-inheritor-react-frontend\\contracts\\provable\\interfaces\\provable-address-resolver-interface.sol",
+  "sourcePath": "C:\\Users\\Rasula\\Desktop\\crypto inheritor\\crypto-inheritor-react-frontend\\contracts\\provable\\interfaces\\provable-address-resolver-interface.sol",
   "ast": {
     "absolutePath": "project:/contracts/provable/interfaces/provable-address-resolver-interface.sol",
     "exportedSymbols": {
@@ -135,7 +135,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-05-09T13:15:42.214Z",
+  "updatedAt": "2023-05-29T02:03:31.903Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},

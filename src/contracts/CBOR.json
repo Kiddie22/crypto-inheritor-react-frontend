@@ -10,7 +10,7 @@
   "sourceMap": "91:2487:15:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;",
   "deployedSourceMap": "91:2487:15:-:0;;;;;;;;",
   "source": "// SPDX-License-Identifier: MIT\npragma solidity >= 0.8.0 < 0.9.0;\n\nimport \"./BUFFER.sol\";\n\nlibrary CBOR {\n    using Buffer for Buffer.buffer;\n\n    uint8 private constant MAJOR_TYPE_INT = 0;\n    uint8 private constant MAJOR_TYPE_MAP = 5;\n    uint8 private constant MAJOR_TYPE_BYTES = 2;\n    uint8 private constant MAJOR_TYPE_ARRAY = 4;\n    uint8 private constant MAJOR_TYPE_STRING = 3;\n    uint8 private constant MAJOR_TYPE_NEGATIVE_INT = 1;\n    uint8 private constant MAJOR_TYPE_CONTENT_FREE = 7;\n\n    function encodeType(Buffer.buffer memory _buf, uint8 _major, uint _value) private pure {\n        if (_value <= 23) {\n            _buf.append(uint8((_major << 5) | _value));\n        } else if (_value <= 0xFF) {\n            _buf.append(uint8((_major << 5) | 24));\n            _buf.appendInt(_value, 1);\n        } else if (_value <= 0xFFFF) {\n            _buf.append(uint8((_major << 5) | 25));\n            _buf.appendInt(_value, 2);\n        } else if (_value <= 0xFFFFFFFF) {\n            _buf.append(uint8((_major << 5) | 26));\n            _buf.appendInt(_value, 4);\n        } else if (_value <= 0xFFFFFFFFFFFFFFFF) {\n            _buf.append(uint8((_major << 5) | 27));\n            _buf.appendInt(_value, 8);\n        }\n    }\n\n    function encodeIndefiniteLengthType(Buffer.buffer memory _buf, uint8 _major) private pure {\n        _buf.append(uint8((_major << 5) | 31));\n    }\n\n    function encodeUInt(Buffer.buffer memory _buf, uint _value) internal pure {\n        encodeType(_buf, MAJOR_TYPE_INT, _value);\n    }\n\n    function encodeInt(Buffer.buffer memory _buf, int _value) internal pure {\n        if (_value >= 0) {\n            encodeType(_buf, MAJOR_TYPE_INT, uint(_value));\n        } else {\n            encodeType(_buf, MAJOR_TYPE_NEGATIVE_INT, uint(-1 - _value));\n        }\n    }\n\n    function encodeBytes(Buffer.buffer memory _buf, bytes memory _value) internal pure {\n        encodeType(_buf, MAJOR_TYPE_BYTES, _value.length);\n        _buf.append(_value);\n    }\n\n    function encodeString(Buffer.buffer memory _buf, string memory _value) internal pure {\n        encodeType(_buf, MAJOR_TYPE_STRING, bytes(_value).length);\n        _buf.append(bytes(_value));\n    }\n\n    function startArray(Buffer.buffer memory _buf) internal pure {\n        encodeIndefiniteLengthType(_buf, MAJOR_TYPE_ARRAY);\n    }\n\n    function startMap(Buffer.buffer memory _buf) internal pure {\n        encodeIndefiniteLengthType(_buf, MAJOR_TYPE_MAP);\n    }\n\n    function endSequence(Buffer.buffer memory _buf) internal pure {\n        encodeIndefiniteLengthType(_buf, MAJOR_TYPE_CONTENT_FREE);\n    }\n}\n",
-  "sourcePath": "C:\\Users\\Rasula\\Documents\\GitHub\\crypto-inheritor-react-frontend\\contracts\\provable\\libraries\\CBOR.sol",
+  "sourcePath": "C:\\Users\\Rasula\\Desktop\\crypto inheritor\\crypto-inheritor-react-frontend\\contracts\\provable\\libraries\\CBOR.sol",
   "ast": {
     "absolutePath": "project:/contracts/provable/libraries/CBOR.sol",
     "exportedSymbols": {
@@ -4199,7 +4199,7 @@
   },
   "networks": {},
   "schemaVersion": "3.4.11",
-  "updatedAt": "2023-05-09T13:15:42.229Z",
+  "updatedAt": "2023-05-29T02:03:31.917Z",
   "devdoc": {
     "kind": "dev",
     "methods": {},
